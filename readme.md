@@ -1,7 +1,7 @@
-🏋️‍♂️ La Clave Fitness Club
+🏋️‍♂️ La Clave Fitness Club <br>
 Bienvenido al repositorio oficial del sitio web de La Clave Fitness Club, una plataforma estática diseñada para promover un estilo de vida saludable, ofreciendo información sobre cursos, productos y contacto con el club. Este proyecto está desarrollado con HTML5, CSS3, JavaScript, Bootstrap y SweetAlert, e integrado con Firebase para hosting, almacenamiento de imágenes y gestión de datos.
 
-🎯 Descripción
+🎯 Descripción<br>
 La Clave Fitness Club es un sitio web estático que permite a los usuarios explorar los servicios del club, incluyendo cursos de fitness, una tienda de productos y un formulario de contacto. Utiliza Firebase Firestore para gestionar datos de productos y cursos en tiempo real, Firebase Storage para almacenar imágenes, y Firebase Hosting para el despliegue. Los estilos están optimizados con Bootstrap 5.3.6 para una navegación responsive (usando su componente navbar) y SweetAlert para notificaciones personalizadas.
 
 🚀 Tecnologías Utilizadas
@@ -13,20 +13,20 @@ La Clave Fitness Club es un sitio web estático que permite a los usuarios explo
 * Almacenamiento: Firebase Storage (para imágenes)
 * Base de datos: Firebase Firestore (para productos y cursos)
 
-📂 Estructura del Proyecto
-textlaclave-fitnessclub/
-├── index.html              # Página principal
-├── css/                    # Estilos CSS personalizados
-├── js/                     # Scripts JavaScript (incluye SweetAlert)
-├── img/                    # Imágenes locales
-├── pages/                  # Páginas secundarias
-│   ├── contacto.html       # Página de contacto
-│   ├── tienda.html         # Página de la tienda
-│   ├── legales.html        # Página de información legal
-│   ├── 404.html            # Página de error 404
-└── .env                    # Variables de entorno (no incluidas en el repositorio)
+📂 Estructura del Proyecto<br>
+textlaclave-fitnessclub/<br>
+├── index.html              # Página principal<br>
+├── css/                    # Estilos CSS personalizados<br>
+├── js/                     # Scripts JavaScript (incluye SweetAlert)<br>
+├── img/                    # Imágenes locales<br>
+├── pages/                  # Páginas secundarias<br>
+│   ├── contacto.html       # Página de contacto<br>
+│   ├── tienda.html         # Página de la tienda<br>
+│   ├── legales.html        # Página de información legal<br>
+│   ├── 404.html            # Página de error 404<br>
+└── .env                    # Variables de entorno (no incluidas en el repositorio)<br>
 
-🔧 Instalación y Configuración
+🔧 Instalación y Configuración<br>
 El sitio es estático y puede visualizarse abriendo index.html directamente en un navegador. Sin embargo, para integrar con Firebase (hosting, storage o Firestore) o instalar dependencias, sigue estos pasos:
 
 Prerrequisitos
@@ -81,24 +81,22 @@ Una vez configurado, despliega el sitio a Firebase:
 ![FitZone](img/fitzone.png)
 ![Contact](img/contact.png)
 
-Coloca los archivos en la carpeta img/ o proporciona enlaces externos.)
-
-🎥 Demo
+🎥 Demo<br>
 El sitio aún no está desplegado. Una vez desplegado, se añadirá un enlace a la demo:
 Visita La Clave Fitness Club (pendiente).
 Si tienes un video del ingreso al sitio, súbelo a una plataforma como YouTube o Vimeo y agrega el enlace aquí.
 
-🤝 Contribución
+🤝 Contribución<br>
 Este es un proyecto privado de La Clave Fitness Club, administrado por un cliente. No se aceptan contribuciones externas. Para sugerencias o colaboraciones, contacta al equipo del club.
 
-📜 Licencia
+📜 Licencia<br>
 Este proyecto es privado y pertenece a La Clave Fitness Club. No se permite su uso, distribución ni reproducción sin autorización expresa del cliente.
 
-👩‍💻 Autora
+👩‍💻 Autora<br>
 Desarrollado por Natalia V. Herrera.
 
-📬 Contacto
-Para consultas, contáctanos en:
+📬 Contacto<br>
+Para consultas, comuníquese en:
 
 * Correo: laclave.fitnessclub@gmail.com
 * WhatsApp: +54 9 3518 67-6680
