@@ -1,0 +1,607 @@
+/* ===============================
+   PANTALLA FIT ZONE
+=============================== */
+.fit-title {
+    text-align: center;
+}
+
+.fit-zone {
+    background-image: url(https://i.postimg.cc/15YrFrBq/fit-zone-fondo.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+}
+.fit-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+.actividades {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 20px 20px 20px;
+}
+
+.actividad {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    margin-bottom: 60px;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: beige;
+    background-color: #3b3c42b9;
+}
+
+.fila-reversa {
+    flex-direction: row-reverse;
+}
+
+.contenido {
+    flex: 1;
+    min-width: 300px;
+}
+
+.icono-blanco .contenido h2 {
+    font-size: 1.8rem;
+    color: #f2d28b;
+    margin-bottom: 15px;
+}
+
+.contenido p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.icono-blanco {
+    filter: invert(100%);
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    /* Podés ajustar este valor según el diseño */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.imagen img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    aspect-ratio: attr(width) / attr(height);
+}
+
+.imagen img:hover {
+    transform: scale(1.10);
+}
+
+/* Modalidades */
+
+.modalidades {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    background-color: black;
+}
+
+.modalidades h3 {
+    color: #f2d28b;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 20px;
+}
+
+/* Tarjetas */
+.tarjeta {
+    width: 300px;
+    padding: 2rem;
+    background-color: #2c2023c7;
+    border: 1px solid #3b3c42;
+    border-radius: 5px;
+    transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover con animación */
+.tarjeta:hover {
+    background-color: #451a0e;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.tarjeta p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #b4a6a6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Botón */
+.tarjeta .btn {
+    background-color: #d4a158;
+    color: #2c2023;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+}
+
+.tarjeta .btn:hover {
+    background-color: #f2d28b;
+}
+
+/* Slider */
+
+.slider-contenedor {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.slider {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
+
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+}
+
+.punto {
+    height: 10px;
+    width: 10px;
+    background-color: #f2d28b;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.punto.activo {
+    opacity: 1;
+}
+
+
+/* Tablets (pantallas menores a 1024px) */
+@media (max-width: 1024px) {
+    .actividad {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .fila-reversa {
+        flex-direction: column;
+    }
+
+    .contenido h2 {
+        font-size: 1.5rem;
+    }
+
+    .contenido p {
+        font-size: 0.95rem;
+    }
+
+    .imagen img {
+        max-width: 90%;
+    }
+}
+
+
+/* Móviles (pantallas menores a 600px) */
+@media (max-width: 600px) {
+    body {
+        background: linear-gradient(135deg, #2c2023, #451a0e, #2c2023);
+    }
+
+    .actividades {
+        padding: 40px 15px;
+    }
+
+    .contenido h2 {
+        font-size: 1.3rem;
+    }
+
+    .contenido p {
+        font-size: 0.9rem;
+    }
+
+    .imagen img {
+        max-width: 100%;
+    }
+
+    .actividad {
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+}
+
+
+/* Responsive: tarjetas en columna en pantallas pequeñas */
+@media (max-width: 768px) {
+    .tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    .modalidades h2 {
+        font-size: 1rem;
+    }
+}
+
+/* ===============================
+   PANTALLA FIT FEST
+=============================== */
+
+.fitness-fest-container {
+    display: flex;
+    padding: 2rem;
+    gap: .6rem;
+    aspect-ratio: 16/9;
+    width: 90%;
+    height: 650px;
+    margin: 0 auto;
+    /* centrado horizontal */
+}
+
+.card {
+    flex: 1 2rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: .7s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card:hover {
+    transform: scale(1.10);
+    flex: 20;
+}
+
+.pasos-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 35px 0 50px 0;
+    padding: 2rem;
+    flex-wrap: wrap;
+    background-color: #2c2023;
+    /* fondo general opcional */
+}
+
+p span {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.paso {
+    flex: 1 1 280px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Hover general */
+.paso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #451a0e;
+    /* marrón muy oscuro */
+    color: #fff;
+}
+
+/* Colores específicos */
+.paso-uno,
+.paso-tres {
+    background-color: #bb8d52;
+    /* marrón claro */
+    color: #2c2023;
+    /* texto oscuro */
+}
+
+.paso-dos {
+    background-color: #3b3c42;
+    /* gris oscuro */
+    color: #f2d28b;
+    /* amarillo tres */
+}
+
+.paso h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.paso p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Iconos */
+.paso img {
+    width: 48px;
+    height: 48px;
+    filter: invert(100%);
+}
+
+/*------ Calendario de Eventos ------*/
+/* === Contenedor general === */
+
+.event-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+    padding: 30px;
+    background-image: url('https://i.postimg.cc/rsn03DC1/event-final-16-9-1.png');
+    object-fit: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* === Cada evento === */
+.event {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    background: #000000a2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* === Bloque de fecha estilo inclinado === */
+.date {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);; /* azul */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+    min-width: 120px;
+}
+
+.date .mes {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.date .dia {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.date .fecha {
+    font-size: 0.8rem;
+}
+
+/* === Icono de categoría === */
+.icono {
+    padding: 10px 15px;
+    filter: invert(100%);
+}
+
+.icono img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+
+/* === Detalles del evento === */
+
+.details {
+    flex: 1;
+    padding: 15px;
+}
+
+.details .hora {
+    font-size: 0.9rem;
+    
+    font-weight: bold;
+    margin: 0;
+}
+
+.details .titulo {
+    font-size: 1.2rem;
+    margin: 5px 0;
+
+}
+
+.details p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+}
+
+/* Colores automáticos por orden */
+.event-list .event:nth-child(5n+1) .date {
+  background: linear-gradient(135deg, #0077b6, #00b4d8); /* azul */
+}
+.event-list .event:nth-child(5n+2) .date {
+  background: linear-gradient(135deg, #76b947, #a3de83); /* verde */
+}
+.event-list .event:nth-child(5n+3) .date {
+  background: linear-gradient(135deg, #f5af19, #f12711); /* naranja */
+}
+.event-list .event:nth-child(5n+4) .date {
+  background: linear-gradient(135deg, #ff512f, #dd2476); /* rojo-rosa */
+}
+.event-list .event:nth-child(5n+5) .date {
+  background: linear-gradient(135deg, #7b2ff7, #f107a3); /* violeta */
+}
+
+/* ===============================
+   PANTALLA FIT STUDIO
+=============================== */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://i.postimg.cc/LXsJvzQd/bootcamp.webp') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero.workshops {
+    background: url('https://i.postimg.cc/nh8QZ9r7/workshop.webp') no-repeat center center/cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+}
+
+/* Títulos */
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.hero-title span {
+    color: #d4a158;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+    color: #f2d28b;
+}
+
+/* Botón */
+.hero-btn {
+    background: #d4a158;
+    color: #2c2023;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #e2b58f;
+}
+
+.info-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #2c2023;
+    color: #fff;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #d4a158;
+}
+
+.info-section p {
+    max-width: 700px;
+    margin: auto;
+    color: #b4a6a6;
+    line-height: 1.6;
+}

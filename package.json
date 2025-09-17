@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.6"
+  },
+  "name": "web-marisol---tienda-v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dev. Natalia V. Herrera",
+  "license": "ISC",
+  "description": ""
+}

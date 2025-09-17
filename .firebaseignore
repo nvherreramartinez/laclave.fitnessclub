@@ -1,0 +1,16 @@
+# Archivos y carpetas que no deben subirse al hosting de Firebase
+
+# Configuración local y sensible
+.env
+*.env
+
+# Dependencias y build innecesarios
+node_modules/
+package.json
+package-lock.json
+
+# Archivos ocultos
+.*
+
+# Notas internas
+machete.txt

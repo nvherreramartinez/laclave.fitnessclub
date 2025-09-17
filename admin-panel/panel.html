@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Idioma y codificación -->
+    <meta charset="UTF-8">
+    <!-- SEO básico -->
+    <title>La Clave Fitness Club | Panel de administrador</title>
+    <meta name="title" content="La Clave Fitness Club | Córdoba">
+    <meta name="description"
+        content="Página oficial de La Clave Fitness Club en Córdoba. Clases presenciales y virtuales, cursos, bootcamps, eventos, talleres y más.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Dev. Natalia V. Herrera">
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:title" content="La Clave Fitness Club | Córdoba">
+    <meta property="og:description" content="Tu momento es Clave. Clases, cursos y eventos de fitness en Córdoba.">
+    <meta property="og:image" content="https://i.postimg.cc/yNFrYw62/LOGO-MARISOL-20250804-231513-0000-1.png">
+    <meta property="og:url" content="https://tusitio.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="La Clave Fitness Club | Córdoba">
+    <meta name="twitter:description" content="Clases, cursos y eventos de fitness en Córdoba.">
+    <meta name="twitter:image" content="https://i.postimg.cc/yNFrYw62/LOGO-MARISOL-20250804-231513-0000-1.png">
+
+    <!-- Datos estructurados (Schema.org / LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HealthClub",
+        "name": "La Clave Fitness Club (Online)",
+        "image": "https://i.postimg.cc/7PFwYyYP/LOGO-AMARILLO-LETRAS-BLANCAS.png",
+        "url": "https://tusitio.com",
+        "telephone": "+54 9 3518 67-6680",
+        "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AR"
+        },
+        "openingHours": "Mo-Fr 09:00-20:00, Sa 09:00-14:00",
+        "sameAs": [
+            "https://www.instagram.com/laclave.fitnessclub",
+            "https://www.facebook.com/LaClave.FitnessClub",
+            "https://www.youtube.com/@marisol.h.m",
+            "https://www.tiktok.com/@marisol.h.m"
+            ]
+        },
+        "offers": {
+            "@type": "Service",
+            "serviceType": "Clases de fitness online",
+            "areaServed": {
+                "@type": "Country",
+                "name": "Worldwide"
+            },
+        "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://tusitio.com/clases-online"
+        }
+    }
+    </script>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/img/favicon-96x96.png" type="image/x-icon">
+
+    <!-- Fuentes y estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap y librerías -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <!-- CSS personalizados -->
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="panel.css">
+    <link rel="stylesheet" href="/css/footer.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/css/footer.css">
+    </noscript>
+    <link rel="stylesheet" href="css/cls-fix.css">
+</head>
+
+<body>
+    <header id="top">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <img src="https://i.postimg.cc/7PFwYyYP/LOGO-AMARILLO-LETRAS-BLANCAS.png" alt="logo" width="150"
+                    height="130" class="d-inline-block align-text-top">
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/fitzone.html">FIT
+                                ZONE</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/fitfest.html">FITNESS
+                                FEST</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/fitstudio.html">FIT
+                                STUDIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/tienda.html">SHOP</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../pages/contacto.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="login-container">
+        <form id="login-form"></form>
+        <h2>Iniciar sesión</h2>
+        <input type="email" id="email" placeholder="Correo" required />
+        <input type="password" id="password" placeholder="Contraseña" required />
+        <button type="submit">Ingresar</button>
+        </form>
+
+
+        <section id="panel" class="hidden">
+            <button id="logout">Cerrar sesión</button>
+            <h2>Gestión de productos</h2>
+            <form id="product-form">
+                <input type="text" id="tittle" placeholder="Nombre del producto" required />
+                <input type="text" id="category" placeholder="Categoría" />
+                <input type="text" id="description" placeholder="Descripción" required />
+                <input type="number" id="stock" placeholder="Stock" required />
+                <input type="number" id="price" placeholder="Precio" required />
+                <input type="number" id="stock" placeholder="Stock" required />
+
+                <select id="modalidad">
+                    <option value="Presencial">Presencial</option>
+                    <option value="Online">Online</option>
+                </select>
+                <input type="file" id="imagen" accept="image/*" />
+                <button type="submit">Guardar producto</button>
+            </form>
+
+            <div id="product-list"></div>
+    </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <!-- Columna izquierda: íconos -->
+                <div class="footer-column footer-izquierda">
+                    <img src="https://i.postimg.cc/4d7Q6SLH/logo-footer.webp"
+                        alt="Logo secundario de La Clave Fitness Club en el pie de página" width="150" height="130"
+                        loading="lazy">
+                    <div class="footer-copy">
+                        <p>© 2025 La Clave Fitness Club. Todos los derechos reservados.</p>
+                        <p>Diseñado y desarrollado por <a
+                                href="https://www.linkedin.com/in/natalia-vanesa-herrera-449956264/"
+                                target="_blank"><strong>@nhache</strong></a></p>
+                    </div>
+                </div>
+
+                <!-- Columna central: Enlaces legales -->
+                <div class="footer-column footer-enlaces">
+                    <a href="/pages/legales.html#acerca">Acerca de nosotros</a>
+                    <a href="#" id="open-cookie-settings">Política y Configuración de Cookies</a>
+                    <a href="/pages/contacto.html">Contáctanos</a>
+                    <a href="/pages/legales.html#privacidad">Política de
+                        privacidad</a>
+                    <a href="/pages/legales.html#terminos">Términos y
+                        condiciones</a>
+
+                </div>
+
+                <!-- Columna derecha: Newsletter -->
+                <section class="footer-column footer-derecha">
+                    <h4>Suscribite al newsletter</h4>
+                    <form id="form-newsletter">
+                        <input type="email" name="email" placeholder="Tu correo electrónico" required
+                            aria-label="Correo electrónico">
+                        <input type="hidden" name="_subject" value="Nueva suscripción al newsletter">
+                        <button type="submit">Enviar</button>
+                        <div aria-live="polite" id="newsletter-feedback"></div>
+                    </form><br>
+                    <div class="footer-social-icons">
+                        <a href="#" id="whatsapp-link" target="_blank"><img
+                                src="https://i.postimg.cc/xjWb7PgY/icono-whatsapp.webp" class="icono-blanco"
+                                alt="WhatsApp de La Clave Fitness Club"></a>
+                        <a href="" target="_blank"><img src="https://i.postimg.cc/brvgGvX8/icono-facebook.webp"
+                                class="icono-blanco" alt="Facebook de La Clave Fitness Club"></a>
+                        <a href="https://www.instagram.com/laclave.fitnessclub" target="_blank"><img
+                                src="https://i.postimg.cc/QMsCD4WG/icono-instagram.webp" class="icono-blanco"
+                                alt="Instagram de La Clave Fitness Club"></a>
+                        <a href="https://www.youtube.com/@marisol.h.m" target="_blank"><img
+                                src="https://i.postimg.cc/dVcr79Tn/icono-youtube.webp" class="icono-blanco"
+                                alt="Canal de YouTube de La Clave Fitness Club"></a>
+                        <a href="https://www.tiktok.com/@marisol.h.m" target="_blank"><img
+                                src="https://i.postimg.cc/7ZLDnF7L/icono-tiktok.webp" class="icono-blanco"
+                                alt="TikTok de La Clave Fitness Club"></a>
+                    </div>
+                    <div>
+                        <a href="#top" class="scroll-to-top">Inicio</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/navbar.js" type="module" defer></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script src="../js/footer.js" type="module" defer></script>
+    <script type="module" src="panel.js"></script>
+
+</body>
+
+</html>

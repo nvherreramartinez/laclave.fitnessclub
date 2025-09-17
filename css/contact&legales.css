@@ -1,0 +1,269 @@
+/* ===============================
+   PANTALLA DE CONTACTO
+=============================== */
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.contact {
+    flex: 1;
+    background-image: url(https://i.postimg.cc/zfxwFwSW/contact.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+}
+
+.contact-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 60px;
+
+}
+
+:root {
+    --negro: #000000bb;
+    --blanco: #ffffff;
+    --gris: #808080;
+    --marron: #a5744c;
+    --crema: #c1926bc0;
+}
+
+/* ---------- COLUMNA IZQUIERDA ---------- */
+.info-panel {
+    background-color: var(--crema);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.info-panel h3 {
+    color: #f2d28b;
+    font-size: 2rem;
+    line-height: 0.9;
+    margin-bottom: 28px;
+    font-weight: 800;
+}
+
+.info-panel p {
+    margin-bottom: 22px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.info-panel ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.info-panel li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.info-panel li a {
+    color: var(--blanco);
+    text-decoration: none;
+    transition: color .25s;
+}
+
+.info-panel li a:hover {
+    color: var(--negro);
+}
+
+.info-panel svg {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    stroke: #2c2023;
+}
+
+/* ---------- FORMULARIO ---------- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+/* Campos */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid var(--gris);
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    background-color: #f0e9bf;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color .25s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--marron);
+}
+
+/* Botón */
+button {
+    background: var(--negro);
+    color: var(--blanco);
+    border: none;
+    padding: 14px 0;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .25s;
+}
+
+button:hover {
+    background: var(--crema);
+}
+
+/* ===============================
+   PANTALLA DE LEGALES
+=============================== */
+
+.contenido-legales {
+    background-image: url(https://i.postimg.cc/JnfZRc7z/janko-ferlic-sf-L-QOnmy00-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    height: auto;
+}
+
+.indice-legales ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 2rem;
+}
+
+.indice-legales li {
+    margin: 8px 0;
+}
+
+.indice-legales a {
+    color: #f0e9e0;
+    text-decoration: none;
+}
+
+.indice-legales a:hover {
+    text-decoration: underline;
+    color: #f2d28b;
+}
+
+.detalle-legales {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    backdrop-filter: blur(20px);
+    color: #090909;
+    font-weight: bold;
+
+}
+
+.detalle-legales section {
+    display: none;
+    margin: 20px 0;
+    padding: 15px;
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Email en sección About */
+#about address a[href^="mailto:"],
+a {
+    color: #f0e9e0;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#about address a:hover,
+a:hover,
+a[href^="mailto:"]:hover {
+    color: #f2d28b;
+    text-decoration: underline;
+}
+
+.link-mail {
+    color: #f0e9e0;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.link-mail:hover {
+    color: #f2d28b;
+    text-decoration: underline;
+}
+
+.detalle-legales section.activo {
+    display: block;
+}
+
+@media (max-width: 992px) {
+    .contenido-legales {
+        padding: 20px;
+    }
+
+    .detalle-legales {
+        padding: 10px;
+    }
+}
+
+/* Layout en dos columnas */
+.layout-legales {
+    display: flex;
+    gap: 2rem;
+}
+
+.indice-legales {
+    flex: 1 1 25%;
+    color: #f0e9e0;
+}
+
+.detalle-legales {
+    flex: 1 1 70%;
+}
+
+/* Ajuste en pantallas chicas */
+@media (max-width: 768px) {
+    .layout-legales {
+        flex-direction: column;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 576px) {
+    .contenido-legales {
+        padding: 15px;
+        background-position: top;
+    }
+
+    .indice-legales li {
+        margin: 6px 0;
+    }
+
+    .detalle-legales {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

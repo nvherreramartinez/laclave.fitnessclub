@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Error 404 - Página no encontrada en La Clave Fitness Club. Podés volver al inicio o contactarnos.">
+    <meta name="author" content="Dev. Natalia V. Herrera">
+    <link rel="shortcut icon" href="/img/favicon-96x96.png" type="image/x-icon">
+    <title>La Clave Fitness Club | Página no encontrada </title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-display: swap;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #fff;
+            background-image: url('https://i.postimg.cc/d1rxCJCt/404.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* ✅ ahora no se recorta */
+            background-position: center;
+            background-color: #6fc2e9;
+            /* ✅ relleno si sobra espacio */
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        p {
+            font-size: 25px;
+            color: #000000;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid #000000;
+            background: #000000;
+            color: #fff;
+            margin-top: 12px;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        /* ✅ Hover: se agranda un poco */
+        .btn:hover {
+            transform: scale(1.08);
+        }
+
+        /* ✅ Responsive: en pantallas menores a 768px */
+        @media (max-width: 768px) {
+            body {
+                background-size: contain;
+                /* en móvil se muestra toda la imagen */
+                background-position: center top;
+            }
+
+            .container {
+                padding: 20px;
+                margin-top: 40px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .btn {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+                /* botones uno debajo del otro */
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container" role="main">
+        <h1>Ups — página no encontrada</h1>
+        <p>La página que buscás no existe o fue movida. Podés volver al inicio o contactarte con nosotros.</p>
+
+        <p>
+            <a class="btn" href="/index.html">Ir al inicio</a>
+            <a class="btn" href="/pages/contacto.html"
+                style="margin-left:8px;background:transparent;color:#000000;border:1px solid #000000">Contacto</a>
+        </p>
+    </main>
+</body>
+
+</html>
