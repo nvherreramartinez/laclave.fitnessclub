@@ -13,12 +13,12 @@ Thumbs.db
 # Configuración del editor
 .vscode/
 
+# Carpetas varias
+admin-panel
+
 # Entornos (si existieran en el futuro)
 .env
 .env.example
 
 # Firebase cache
 .firebase/
-
-# Notas propias
-machete.txt
