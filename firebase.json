@@ -1,19 +1,16 @@
 {
   "hosting": {
-    "public": ".",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "package.json",
-      "package-lock.json",
-      "machete.txt"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/pages/404.html"
-      }
+      "**/node_modules/**"
     ]
+  },
+  "firestore": {
+    "database": "(default)",
+    "location": "nam5",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }

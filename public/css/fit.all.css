@@ -209,79 +209,6 @@
     opacity: 1;
 }
 
-
-/* Tablets (pantallas menores a 1024px) */
-@media (max-width: 1024px) {
-    .actividad {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .fila-reversa {
-        flex-direction: column;
-    }
-
-    .contenido h2 {
-        font-size: 1.5rem;
-    }
-
-    .contenido p {
-        font-size: 0.95rem;
-    }
-
-    .imagen img {
-        max-width: 90%;
-    }
-}
-
-
-/* Móviles (pantallas menores a 600px) */
-@media (max-width: 600px) {
-    body {
-        background: linear-gradient(135deg, #2c2023, #451a0e, #2c2023);
-    }
-
-    .actividades {
-        padding: 40px 15px;
-    }
-
-    .contenido h2 {
-        font-size: 1.3rem;
-    }
-
-    .contenido p {
-        font-size: 0.9rem;
-    }
-
-    .imagen img {
-        max-width: 100%;
-    }
-
-    .actividad {
-        margin-bottom: 40px;
-        gap: 20px;
-    }
-}
-
-
-/* Responsive: tarjetas en columna en pantallas pequeñas */
-@media (max-width: 768px) {
-    .tarjetas {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tarjeta {
-        width: 90%;
-        max-width: 360px;
-    }
-
-    .modalidades h2 {
-        font-size: 1rem;
-    }
-}
-
 /* ===============================
    PANTALLA FIT FEST
 =============================== */
@@ -604,4 +531,246 @@ p span {
     margin: auto;
     color: #b4a6a6;
     line-height: 1.6;
+}
+/* ================================
+   RESPONSIVE OPTIMIZADO FIT ZONE, FEST, STUDIO, EVENTOS
+================================= */
+
+/* Tablets medianas: <1024px */
+@media (max-width: 1024px) {
+
+    /* Actividades */
+    .actividad {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .fila-reversa {
+        flex-direction: column;
+    }
+
+    .contenido h2 {
+        font-size: 1.5rem;
+    }
+
+    .contenido p {
+        font-size: 0.95rem;
+    }
+
+    .imagen img {
+        max-width: 90%;
+    }
+
+    /* Tarjetas */
+    .tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    .modalidades h2 {
+        font-size: 1rem;
+    }
+}
+
+/* Smartphones grandes: <768px */
+@media (max-width: 768px) {
+    .actividades {
+        padding: 50px 20px 20px;
+    }
+
+    .pasos-container,
+    .fitness-fest-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .paso {
+        flex: 1 1 280px;
+    }
+
+    /* Calendario de eventos */
+    .event-container {
+        padding: 20px;
+    }
+}
+
+/* Smartphones medianos: <600px */
+@media (max-width: 600px) {
+    body {
+        background: linear-gradient(135deg, #2c2023, #451a0e, #2c2023);
+    }
+
+    .actividades {
+        padding: 40px 15px;
+    }
+
+    .contenido h2 {
+        font-size: 1.3rem;
+    }
+
+    .contenido p {
+        font-size: 0.9rem;
+    }
+
+    .imagen img {
+        max-width: 100%;
+    }
+
+    .actividad {
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+
+    .pasos-container,
+    .fitness-fest-container {
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .info-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-section p {
+        font-size: 0.9rem;
+        max-width: 95%;
+    }
+}
+
+/* Smartphones pequeños: <480px */
+@media (max-width: 480px) {
+    .actividad {
+        padding: 1.5rem;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .contenido h2 {
+        font-size: 1.2rem;
+    }
+
+    .contenido p {
+        font-size: 0.85rem;
+    }
+
+    .imagen img {
+        padding: 0.5rem;
+    }
+
+    .tarjeta {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .info-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .info-section p {
+        font-size: 0.85rem;
+    }
+
+    .event-container {
+        padding: 15px;
+    }
+
+    .event-list {
+        gap: 15px;
+    }
+
+    .date {
+        min-width: 100px;
+        padding: 10px 15px;
+    }
+
+    .date .mes {
+        font-size: 0.9rem;
+    }
+
+    .date .dia {
+        font-size: 1.5rem;
+    }
+
+    .date .fecha {
+        font-size: 0.7rem;
+    }
+
+    .icono img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .details .hora,
+    .details p {
+        font-size: 0.8rem;
+    }
+
+    .details .titulo {
+        font-size: 1rem;
+    }
+}
+
+/* Smartphones muy pequeños: <360px */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .hero-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .contenido h2 {
+        font-size: 1.1rem;
+    }
+
+    .contenido p,
+    .info-section p {
+        font-size: 0.8rem;
+    }
+
+    .info-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .tarjeta {
+        padding: 1rem;
+    }
 }

@@ -1,12 +1,17 @@
+/* ===============================
+   FOOTER
+=============================== */
 footer {
     background-color: #5a3030;
     color: #ffffff;
-    padding: 20px 30px 10px; 
+    padding: 20px 30px 10px;
     min-height: 250px;
 }
+
 .footer-inner {
     overflow: hidden;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -21,14 +26,18 @@ footer {
     flex-direction: column;
 }
 
+/* Izquierda */
 .footer-izquierda {
     flex: 1;
     max-width: 400px;
+    align-items: flex-start;
 }
+
 .footer-izquierda img {
     width: 100px;
     height: auto;
 }
+
 .footer-copy {
     font-size: 12px;
     margin-top: 25px;
@@ -45,7 +54,7 @@ footer {
     text-decoration: underline;
 }
 
-/* Columna centro con enlaces legales */
+/* Centro - enlaces legales */
 .footer-enlaces {
     flex: 1;
     max-width: 200px;
@@ -65,7 +74,7 @@ footer {
     color: #c1916b;
 }
 
-/* Columna derecha: newsletter */
+/* Derecha - newsletter */
 .footer-derecha {
     flex: 1.5;
     max-width: 400px;
@@ -109,37 +118,46 @@ footer {
 .footer-derecha button:hover {
     background-color: #a5744c;
 }
+
 #newsletter-feedback {
     font-size: 12px;
     margin-top: 6px;
     opacity: 1;
-    transition: opacity 0.5s ease; /* transición suave */
+    transition: opacity 0.5s ease;
 }
+
 #newsletter-feedback.fade-out {
     opacity: 0;
 }
+
 #newsletter-feedback.success {
-    color: #4CAF50; /* verde */
+    color: #4CAF50;
 }
 
 #newsletter-feedback.error {
-    color: #ff5252; /* rojo */
+    color: #ff5252;
 }
+
+/* Redes sociales */
 .footer-social-icons {
     display: flex;
-    gap: 8px; /* antes: 12px */
+    gap: 8px;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .footer-social-icons a img {
-    width: 30px; /* antes: 32px */
+    width: 30px;
     height: 30px;
     filter: invert(100%);
-}
-.footer-social-icons a img:hover {
-    transform: scale(1.25);
     transition: transform 0.3s ease;
 }
+
+.footer-social-icons a img:hover {
+    transform: scale(1.25);
+}
+
+/* Scroll to top */
 .scroll-to-top {
     display: inline-block;
     line-height: 1.4;
@@ -149,13 +167,17 @@ footer {
     color: white;
     text-decoration: none;
     cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
+
 .scroll-to-top:hover {
     color: #c1916b;
     transform: scale(1.5);
-    transition: transform 0.3s ease;
 }
-/* Responsive para pantallas chicas */
+
+/* ===============================
+   FOOTER RESPONSIVE
+=============================== */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -188,5 +210,33 @@ footer {
 
     .footer-copy {
         margin-top: 25px;
+    }
+}
+
+/* Muy pequeños (<480px) */
+@media (max-width: 480px) {
+    footer {
+        padding: 15px 10px 10px;
+    }
+
+    .footer-copy,
+    .footer-enlaces,
+    .footer-derecha h4,
+    .footer-derecha input[type="email"],
+    .footer-derecha button,
+    .scroll-to-top {
+        font-size: 11px;
+    }
+
+    .footer-social-icons a img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer-social-icons a img {
+        width: 20px;
+        height: 20px;
     }
 }

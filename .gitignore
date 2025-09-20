@@ -22,3 +22,6 @@ admin-panel
 
 # Firebase cache
 .firebase/
+
+# Windows
+desktop.ini

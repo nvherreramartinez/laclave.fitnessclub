@@ -228,7 +228,6 @@ a[href^="mailto:"]:hover {
         padding: 10px;
     }
 }
-
 /* Layout en dos columnas */
 .layout-legales {
     display: flex;
@@ -243,27 +242,226 @@ a[href^="mailto:"]:hover {
 .detalle-legales {
     flex: 1 1 70%;
 }
+/* ================================
+   CONTACTO RESPONSIVE
+================================= */
 
-/* Ajuste en pantallas chicas */
-@media (max-width: 768px) {
-    .layout-legales {
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        display: flex;
         flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .info-panel {
+        padding: 30px 20px;
+        border-radius: 6px;
+    }
+
+    .info-panel h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .info-panel p,
+    .info-panel li {
+        font-size: 0.95rem;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 12px 0;
     }
 }
 
-/* Smartphones */
-@media (max-width: 576px) {
-    .contenido-legales {
+/* Smartphones grandes (600px - 480px) */
+@media (max-width: 600px) {
+    .contact-wrapper {
+        padding: 20px 15px;
+        gap: 25px;
+    }
+
+    .info-panel {
+        padding: 25px 15px;
+    }
+
+    .info-panel h3 {
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+    }
+
+    .info-panel p,
+    .info-panel li {
+        font-size: 0.9rem;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 0.85rem;
+        padding: 9px 10px;
+    }
+
+    button {
+        font-size: 0.85rem;
+        padding: 11px 0;
+    }
+}
+
+/* Smartphones pequeños (<480px) */
+@media (max-width: 480px) {
+    .contact-wrapper {
+        padding: 15px 10px;
+        gap: 20px;
+    }
+
+    .info-panel {
+        padding: 20px 12px;
+    }
+
+    .info-panel h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .info-panel p,
+    .info-panel li {
+        font-size: 0.85rem;
+    }
+
+    .contact-form {
+        gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 10px 0;
+    }
+
+    /* Fondo adaptado */
+    .contact {
+        background-position: center top;
+        background-size: cover;
+        padding-bottom: 30px;
+    }
+}
+
+/* ================================
+   LEGALES RESPONSIVE
+================================= */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    .layout-legales {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .indice-legales {
+        flex: 1 1 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .detalle-legales {
+        flex: 1 1 100%;
         padding: 15px;
-        background-position: top;
+        font-size: 0.95rem;
+    }
+
+    .contenido-legales {
+        padding: 20px;
+    }
+}
+
+/* Smartphones grandes (600px - 480px) */
+@media (max-width: 600px) {
+    .contenido-legales {
+        padding: 18px 15px;
+        background-position: top center;
+    }
+
+    .indice-legales ul {
+        margin: 1.5rem 0;
     }
 
     .indice-legales li {
-        margin: 6px 0;
+        margin: 5px 0;
+    }
+
+    .detalle-legales {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Smartphones pequeños (<480px) */
+@media (max-width: 480px) {
+    .contenido-legales {
+        padding: 15px 10px;
+        background-position: top center;
+    }
+
+    .layout-legales {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .indice-legales {
+        margin: 0 0 8px 0;
+        font-size: 0.85rem;
+    }
+
+    .indice-legales ul {
+        margin: 1rem 0;
+        padding-left: 0.5rem;
+    }
+
+    .detalle-legales {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .detalle-legales section {
+        padding: 10px;
+    }
+}
+
+/* Smartphones muy pequeños (<360px) */
+@media (max-width: 360px) {
+    .contenido-legales {
+        padding: 12px 8px;
+    }
+
+    .indice-legales {
+        font-size: 0.8rem;
     }
 
     .detalle-legales {
         padding: 8px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    .detalle-legales section {
+        padding: 8px;
     }
 }
+/* ================================
+   FIN DE ARCHIVO
+================================= */
