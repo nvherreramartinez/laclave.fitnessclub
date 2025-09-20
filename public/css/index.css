@@ -517,6 +517,11 @@ h2 {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
     }
+
+    .second-title {
+        font-size: 2.5rem;
+        letter-spacing: 2.5px;
+    }
 }
 
 /* ✅ cookie banner apilado */
@@ -586,6 +591,11 @@ h2 {
     .welcome-btn {
         width: 100%;
     }
+
+    .second-title {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -599,5 +609,10 @@ h2 {
 
     .feature p {
         font-size: 0.9rem;
+    }
+
+    .second-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
     }
 }
