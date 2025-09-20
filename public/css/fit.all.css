@@ -708,17 +708,36 @@ p span {
         padding: .5rem .8rem;
         font-size: .8rem;
     }
+    .actividades {
+        padding: 30px 10px;
+    }
+    .actividad {
+        padding: 0.5rem;
+        gap: 5px;
+    }
+    .contenido {
+        min-width: 0; /* Eliminar min-width para permitir ajuste */
+    }
+
     .contenido h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .contenido p,
-    .info-section p {
-        font-size: .8rem;
+    .info-section {
+        font-size: 0.75rem;
+        line-height: 1.4;
     }
     .info-section h2 {
         font-size: 1.2rem;
     }
     .tarjeta {
         padding: 1rem;
+    }
+    .fitness-fest-container {
+        padding: 1rem;
+        height: auto; /* Permitir altura dinámica */
+    }
+    .slider-contenedor {
+        max-width: 100%; /* Asegurar que no exceda el viewport */
     }
 }

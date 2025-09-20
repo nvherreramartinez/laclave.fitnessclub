@@ -287,8 +287,6 @@ video {
     transition: transform 0.3s ease, text-shadow 0.3s ease;
     transform-origin: center;
     max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
     white-space: normal;
 }
 
@@ -630,9 +628,29 @@ h2 {
 
 /* ✅ Ajuste puntual para 360px */
 @media (max-width: 360px) {
+    .welcome-logo {
+        width: clamp(120px, 40vw, 140px);
+        /* Ajustar dinámicamente */
+    }
+
+    .container {
+        padding: 10px;
+        /* Reducir aún más el padding */
+    }
+
+    .workouts-container {
+        gap: 20px;
+        /* Reducir el gap */
+    }
+
+    .workout-card {
+        max-width: 100%;
+        /* Asegurar que no exceda el viewport */
+    }
+
     .second-title {
-        font-size: 1.6rem;     /* más chico que 4rem */
-        letter-spacing: 1px;  /* menos separación entre letras */
-        padding: 0 10px;      /* aire lateral sin forzar scroll */
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        padding: 0 5px;
     }
 }

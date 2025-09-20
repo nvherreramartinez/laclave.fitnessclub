@@ -228,6 +228,7 @@ a[href^="mailto:"]:hover {
         padding: 10px;
     }
 }
+
 /* Layout en dos columnas */
 .layout-legales {
     display: flex;
@@ -242,6 +243,7 @@ a[href^="mailto:"]:hover {
 .detalle-legales {
     flex: 1 1 70%;
 }
+
 /* ================================
    CONTACTO RESPONSIVE
 ================================= */
@@ -361,6 +363,19 @@ a[href^="mailto:"]:hover {
         background-size: cover;
         padding-bottom: 30px;
     }
+
+}
+
+@media (max-width: 360px) {
+    .contact-wrapper {
+        padding: 10px 5px;
+        gap: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* Forzar una sola columna */
+    }
 }
 
 /* ================================
@@ -446,7 +461,7 @@ a[href^="mailto:"]:hover {
 /* Smartphones muy pequeños (<360px) */
 @media (max-width: 360px) {
     .contenido-legales {
-        padding: 12px 8px;
+        padding: 10px 5px;
     }
 
     .indice-legales {
@@ -454,14 +469,19 @@ a[href^="mailto:"]:hover {
     }
 
     .detalle-legales {
-        padding: 8px;
+        padding: 5px;
         font-size: 0.8rem;
     }
 
     .detalle-legales section {
         padding: 8px;
     }
+
+    .layout-legales {
+        gap: 10px;
+    }
 }
+
 /* ================================
    FIN DE ARCHIVO
 ================================= */
