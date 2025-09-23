@@ -1,12 +1,21 @@
 /* ===============================
    PANTALLA DE CONTACTO
 =============================== */
+:root {
+    --negro: #000000bb;
+    --blanco: #ffffff;
+    --gris: #808080;
+    --marron: #a5744c;
+    --crema: #c1926bc0;
+    --amarillo: #f2d28b; /* AJUSTE: Definir color usado en h3 y enlaces */
+    --crema-claro: #f0e9e0; /* AJUSTE: Definir color usado en enlaces legales */
+}
+
 .contact-main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 
 .contact {
     flex: 1;
@@ -17,41 +26,32 @@
 }
 
 .contact-wrapper {
-    max-width: 1100px;
+    max-width: clamp(800px, 90vw, 1000px); /* AJUSTE: Ancho dinámico */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem); /* AJUSTE: Padding dinámico */
     display: grid;
     grid-template-columns: 1fr 1.3fr;
-    gap: 60px;
-
-}
-
-:root {
-    --negro: #000000bb;
-    --blanco: #ffffff;
-    --gris: #808080;
-    --marron: #a5744c;
-    --crema: #c1926bc0;
+    gap: clamp(1.5rem, 4vw, 2.5rem); /* AJUSTE: Gap dinámico */
 }
 
 /* ---------- COLUMNA IZQUIERDA ---------- */
 .info-panel {
     background-color: var(--crema);
-    padding: 40px;
+    padding: clamp(1.5rem, 3vw, 2rem); /* AJUSTE: Padding dinámico */
     border-radius: 8px;
 }
 
 .info-panel h3 {
-    color: #f2d28b;
-    font-size: 2rem;
-    line-height: 0.9;
-    margin-bottom: 28px;
+    color: var(--amarillo);
+    font-size: clamp(1.5rem, 3vw, 1.8rem); /* AJUSTE: Tamaño dinámico */
+    line-height: 1.1; /* AJUSTE: Mejor legibilidad */
+    margin-bottom: clamp(1rem, 2vw, 1.5rem); /* AJUSTE: Margen dinámico */
     font-weight: 800;
 }
 
 .info-panel p {
-    margin-bottom: 22px;
-    font-size: 0.95rem;
+    margin-bottom: clamp(0.8rem, 2vw, 1rem);
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem); /* AJUSTE: Tamaño dinámico */
     font-weight: bold;
 }
 
@@ -59,21 +59,22 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    margin-top: 25px;
+    gap: clamp(10px, 2vw, 14px); /* AJUSTE: Gap dinámico */
+    margin-top: clamp(1rem, 2vw, 1.5rem);
 }
 
 .info-panel li {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: clamp(6px, 1.5vw, 8px); /* AJUSTE: Gap dinámico */
     font-weight: 600;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .info-panel li a {
     color: var(--blanco);
     text-decoration: none;
-    transition: color .25s;
+    transition: color 0.25s;
 }
 
 .info-panel li a:hover {
@@ -82,8 +83,8 @@
 
 .info-panel svg {
     flex-shrink: 0;
-    width: 22px;
-    height: 22px;
+    width: clamp(18px, 4vw, 22px); /* AJUSTE: Tamaño dinámico */
+    height: clamp(18px, 4vw, 22px);
     stroke: #2c2023;
 }
 
@@ -91,13 +92,13 @@
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: clamp(12px, 2vw, 16px); /* AJUSTE: Gap dinámico */
 }
 
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 280px), 1fr)); /* AJUSTE: Columnas dinámicas */
+    gap: clamp(12px, 2vw, 16px); /* AJUSTE: Gap dinámico */
 }
 
 /* Campos */
@@ -106,12 +107,12 @@
 .contact-form textarea {
     width: 100%;
     border: 1px solid var(--gris);
-    padding: 12px 14px;
-    font-size: 0.95rem;
+    padding: clamp(8px, 1.5vw, 12px); /* AJUSTE: Padding dinámico */
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem); /* AJUSTE: Tamaño dinámico */
     background-color: #f0e9bf;
     border-radius: 4px;
     outline: none;
-    transition: border-color .25s;
+    transition: border-color 0.25s;
 }
 
 input:focus,
@@ -125,13 +126,13 @@ button {
     background: var(--negro);
     color: var(--blanco);
     border: none;
-    padding: 14px 0;
-    font-size: 0.9rem;
+    padding: clamp(10px, 1.5vw, 12px) 0; /* AJUSTE: Padding dinámico */
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem); /* AJUSTE: Tamaño dinámico */
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
     border-radius: 2px;
-    transition: background .25s;
+    transition: background 0.25s;
 }
 
 button:hover {
@@ -141,49 +142,55 @@ button:hover {
 /* ===============================
    PANTALLA DE LEGALES
 =============================== */
-
 .contenido-legales {
     background-image: url(https://i.postimg.cc/JnfZRc7z/janko-ferlic-sf-L-QOnmy00-unsplash.jpg);
     background-size: cover;
     background-position: center;
-    padding: 30px;
+    padding: clamp(1.5rem, 3vw, 2rem); /* AJUSTE: Padding dinámico */
     height: auto;
+}
+
+.indice-legales {
+    flex: 1 1 clamp(200px, 25vw, 300px); /* AJUSTE: Ancho dinámico */
+    color: var(--crema-claro);
 }
 
 .indice-legales ul {
     list-style: none;
     padding-left: 0;
-    margin: 2rem;
+    margin: clamp(1rem, 2vw, 1.5rem) 0; /* AJUSTE: Margen dinámico */
 }
 
 .indice-legales li {
-    margin: 8px 0;
+    margin: clamp(6px, 1.5vw, 8px) 0; /* AJUSTE: Margen dinámico */
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .indice-legales a {
-    color: #f0e9e0;
+    color: var(--crema-claro);
     text-decoration: none;
 }
 
 .indice-legales a:hover {
     text-decoration: underline;
-    color: #f2d28b;
+    color: var(--amarillo);
 }
 
 .detalle-legales {
+    flex: 1 1 clamp(400px, 65vw, 700px); /* AJUSTE: Ancho dinámico */
     max-width: 100%;
     margin: 0 auto;
-    padding: 10px;
+    padding: clamp(8px, 1.5vw, 12px); /* AJUSTE: Padding dinámico */
     backdrop-filter: blur(20px);
     color: #090909;
     font-weight: bold;
-
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .detalle-legales section {
     display: none;
-    margin: 20px 0;
-    padding: 15px;
+    margin: clamp(1rem, 2vw, 1.5rem) 0;
+    padding: clamp(10px, 1.5vw, 15px);
     backdrop-filter: blur(15px);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
@@ -192,7 +199,7 @@ button:hover {
 /* Email en sección About */
 #about address a[href^="mailto:"],
 a {
-    color: #f0e9e0;
+    color: var(--crema-claro);
     text-decoration: none;
     font-weight: normal;
 }
@@ -200,18 +207,18 @@ a {
 #about address a:hover,
 a:hover,
 a[href^="mailto:"]:hover {
-    color: #f2d28b;
+    color: var(--amarillo);
     text-decoration: underline;
 }
 
 .link-mail {
-    color: #f0e9e0;
+    color: var(--crema-claro);
     text-decoration: none;
     font-weight: normal;
 }
 
 .link-mail:hover {
-    color: #f2d28b;
+    color: var(--amarillo);
     text-decoration: underline;
 }
 
@@ -219,269 +226,348 @@ a[href^="mailto:"]:hover {
     display: block;
 }
 
-@media (max-width: 992px) {
-    .contenido-legales {
-        padding: 20px;
-    }
-
-    .detalle-legales {
-        padding: 10px;
-    }
-}
-
 /* Layout en dos columnas */
 .layout-legales {
     display: flex;
-    gap: 2rem;
-}
-
-.indice-legales {
-    flex: 1 1 25%;
-    color: #f0e9e0;
-}
-
-.detalle-legales {
-    flex: 1 1 70%;
+    gap: clamp(1rem, 2.5vw, 1.5rem); /* AJUSTE: Gap dinámico */
 }
 
 /* ================================
    CONTACTO RESPONSIVE
 ================================= */
 
-/* Tablets y pantallas medianas */
-@media (max-width: 992px) {
+/* Celulares grandes y tablets pequeñas (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
     .contact-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px 20px;
+        grid-template-columns: 1fr; /* AJUSTE: Apilar columnas */
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+        padding: clamp(1rem, 2vw, 1.5rem) clamp(0.8rem, 1.5vw, 1rem);
     }
 
     .info-panel {
-        padding: 30px 20px;
+        padding: clamp(1rem, 2vw, 1.5rem);
         border-radius: 6px;
     }
 
     .info-panel h3 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
+        font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+        margin-bottom: clamp(0.8rem, 2vw, 1rem);
     }
 
     .info-panel p,
     .info-panel li {
-        font-size: 0.95rem;
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     }
 
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
-        font-size: 0.9rem;
-        padding: 10px 12px;
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+        padding: clamp(8px, 1.5vw, 10px);
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 35vw, 250px), 1fr)); /* AJUSTE: Columnas dinámicas */
     }
 
     button {
-        font-size: 0.9rem;
-        padding: 12px 0;
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+        padding: clamp(8px, 1.5vw, 10px) 0;
     }
 }
 
-/* Smartphones grandes (600px - 480px) */
-@media (max-width: 600px) {
+/* Tablets de 9-10 pulgadas (600px - 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
     .contact-wrapper {
-        padding: 20px 15px;
-        gap: 25px;
+        flex-direction: column;
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+        padding: clamp(1rem, 2vw, 1.5rem) clamp(0.8rem, 1.5vw, 1rem);
     }
 
     .info-panel {
-        padding: 25px 15px;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        border-radius: 6px;
     }
 
     .info-panel h3 {
-        font-size: 1.5rem;
-        margin-bottom: 18px;
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        margin-bottom: clamp(0.8rem, 2vw, 1rem);
     }
 
     .info-panel p,
     .info-panel li {
-        font-size: 0.9rem;
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     }
 
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
-        font-size: 0.85rem;
-        padding: 9px 10px;
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+        padding: clamp(6px, 1.5vw, 8px);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* AJUSTE: Forzar una sola columna */
     }
 
     button {
-        font-size: 0.85rem;
-        padding: 11px 0;
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+        padding: clamp(8px, 1.5vw, 10px) 0;
     }
 }
 
 /* Smartphones pequeños (<480px) */
 @media (max-width: 480px) {
     .contact-wrapper {
-        padding: 15px 10px;
-        gap: 20px;
+        padding: clamp(0.8rem, 1.5vw, 1rem) clamp(0.5rem, 1vw, 0.8rem);
+        gap: clamp(0.8rem, 2vw, 1rem);
     }
 
     .info-panel {
-        padding: 20px 12px;
+        padding: clamp(0.8rem, 1.5vw, 1rem);
     }
 
     .info-panel h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        margin-bottom: clamp(0.6rem, 1.5vw, 0.8rem);
         line-height: 1.2;
     }
 
     .info-panel p,
     .info-panel li {
-        font-size: 0.85rem;
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     }
 
     .contact-form {
-        gap: 15px;
+        gap: clamp(10px, 1.5vw, 12px);
     }
 
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
-        font-size: 0.8rem;
-        padding: 8px 10px;
-    }
-
-    button {
-        font-size: 0.8rem;
-        padding: 10px 0;
-    }
-
-    /* Fondo adaptado */
-    .contact {
-        background-position: center top;
-        background-size: cover;
-        padding-bottom: 30px;
-    }
-
-}
-
-@media (max-width: 360px) {
-    .contact-wrapper {
-        padding: 10px 5px;
-        gap: 15px;
+        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+        padding: clamp(6px, 1vw, 8px);
     }
 
     .form-grid {
         grid-template-columns: 1fr;
-        /* Forzar una sola columna */
+    }
+
+    button {
+        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+        padding: clamp(6px, 1vw, 8px) 0;
+    }
+
+    .contact {
+        background-position: center top;
+        background-size: cover;
+        padding-bottom: clamp(1rem, 2vw, 1.5rem);
+    }
+}
+
+/* Smartphones muy pequeños (<360px) */
+@media (max-width: 360px) {
+    .contact-wrapper {
+        padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.3rem, 1vw, 0.5rem);
+        gap: clamp(0.5rem, 1.5vw, 0.8rem);
+    }
+
+    .info-panel {
+        padding: clamp(0.5rem, 1vw, 0.8rem);
+    }
+
+    .info-panel h3 {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .info-panel p,
+    .info-panel li {
+        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+    }
+
+    button {
+        font-size: clamp(0.65rem, 1.5vw, 0.75rem);
     }
 }
 
 /* ================================
    LEGALES RESPONSIVE
 ================================= */
+/* Tablets grandes y notebooks pequeños (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .layout-legales {
+        gap: clamp(1rem, 2vw, 1.5rem);
+    }
 
-/* Tablets y pantallas medianas */
-@media (max-width: 768px) {
+    .indice-legales {
+        flex: 1 1 clamp(180px, 20vw, 250px); /* AJUSTE: Ancho dinámico */
+    }
+
+    .detalle-legales {
+        flex: 1 1 clamp(350px, 65vw, 600px);
+        padding: clamp(8px, 1.5vw, 10px);
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    }
+
+    .contenido-legales {
+        padding: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    /* AJUSTE: Específico para 1366x768px */
+    @media (max-width: 1366px) {
+        .indice-legales {
+            flex: 1 1 clamp(160px, 18vw, 220px);
+        }
+
+        .detalle-legales {
+            flex: 1 1 clamp(300px, 60vw, 550px);
+            font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+        }
+
+        .indice-legales li {
+            font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+        }
+    }
+}
+
+/* Tablets y pantallas medianas (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
     .layout-legales {
         flex-direction: column;
-        gap: 20px;
+        gap: clamp(0.8rem, 2vw, 1rem);
     }
 
     .indice-legales {
         flex: 1 1 100%;
-        margin: 0 0 10px 0;
+        margin: 0 0 clamp(0.8rem, 1.5vw, 1rem) 0;
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     }
 
     .detalle-legales {
         flex: 1 1 100%;
-        padding: 15px;
-        font-size: 0.95rem;
+        padding: clamp(8px, 1.5vw, 10px);
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     }
 
     .contenido-legales {
-        padding: 20px;
+        padding: clamp(1rem, 2vw, 1.5rem);
     }
 }
 
-/* Smartphones grandes (600px - 480px) */
+/* Tablets de 9-10 pulgadas (600px - 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .layout-legales {
+        flex-direction: column;
+        gap: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    .indice-legales {
+        flex: 1 1 100%;
+        margin: 0 0 clamp(0.8rem, 1.5vw, 1rem) 0;
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    }
+
+    .detalle-legales {
+        flex: 1 1 100%;
+        padding: clamp(8px, 1.5vw, 10px);
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    }
+
+    .contenido-legales {
+        padding: clamp(1rem, 2vw, 1.5rem);
+    }
+}
+
+/* Smartphones grandes (480px - 600px) */
 @media (max-width: 600px) {
     .contenido-legales {
-        padding: 18px 15px;
+        padding: clamp(0.8rem, 1.5vw, 1rem) clamp(0.5rem, 1vw, 0.8rem);
         background-position: top center;
     }
 
     .indice-legales ul {
-        margin: 1.5rem 0;
+        margin: clamp(0.8rem, 1.5vw, 1rem) 0;
     }
 
     .indice-legales li {
-        margin: 5px 0;
+        margin: clamp(4px, 1vw, 6px) 0;
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     }
 
     .detalle-legales {
-        padding: 12px;
-        font-size: 0.9rem;
+        padding: clamp(6px, 1vw, 8px);
+        font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     }
 }
 
 /* Smartphones pequeños (<480px) */
 @media (max-width: 480px) {
     .contenido-legales {
-        padding: 15px 10px;
+        padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.3rem, 1vw, 0.5rem);
         background-position: top center;
     }
 
     .layout-legales {
         flex-direction: column;
-        gap: 15px;
+        gap: clamp(0.5rem, 1.5vw, 0.8rem);
     }
 
     .indice-legales {
-        margin: 0 0 8px 0;
-        font-size: 0.85rem;
+        margin: 0 0 clamp(0.5rem, 1vw, 0.8rem) 0;
+        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     }
 
     .indice-legales ul {
-        margin: 1rem 0;
-        padding-left: 0.5rem;
+        margin: clamp(0.5rem, 1vw, 0.8rem) 0;
+        padding-left: clamp(0.3rem, 1vw, 0.5rem);
     }
 
     .detalle-legales {
-        padding: 10px;
-        font-size: 0.85rem;
+        padding: clamp(6px, 1vw, 8px);
+        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     }
 
     .detalle-legales section {
-        padding: 10px;
+        padding: clamp(6px, 1vw, 8px);
     }
 }
 
 /* Smartphones muy pequeños (<360px) */
 @media (max-width: 360px) {
     .contenido-legales {
-        padding: 10px 5px;
+        padding: clamp(0.3rem, 1vw, 0.5rem);
     }
 
     .indice-legales {
-        font-size: 0.8rem;
+        font-size: clamp(0.65rem, 1.5vw, 0.75rem);
     }
 
     .detalle-legales {
-        padding: 5px;
-        font-size: 0.8rem;
+        padding: clamp(4px, 1vw, 6px);
+        font-size: clamp(0.65rem, 1.5vw, 0.75rem);
     }
 
     .detalle-legales section {
-        padding: 8px;
+        padding: clamp(4px, 1vw, 6px);
     }
 
     .layout-legales {
-        gap: 10px;
+        gap: clamp(0.3rem, 1vw, 0.5rem);
     }
 }
 
+/* AJUSTE: Alta densidad de píxeles (Retina, etc.) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .info-panel svg {
+        image-rendering: -webkit-optimize-contrast; /* AJUSTE: Mejorar nitidez de SVGs */
+    }
+}
 /* ================================
    FIN DE ARCHIVO
 ================================= */

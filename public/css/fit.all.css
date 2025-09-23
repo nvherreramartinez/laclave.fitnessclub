@@ -213,24 +213,17 @@
 =============================== */
 
 .fitness-fest-container {
-    display: flex;
-    padding: 2rem;
-    gap: .6rem;
-    aspect-ratio: 16/9;
-    width: 90%;
-    height: 650px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    padding: 1rem;
+    max-width: 1200px;
     margin: 0 auto;
-    /* centrado horizontal */
 }
-
 .card {
-    flex: 1 2rem;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: .7s;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    overflow: hidden;
 }
 
 .card img {
@@ -531,7 +524,7 @@ p span {
     color: #b4a6a6;
     line-height: 1.6;
 }
-/* ================================
+/* ===============================
    RESPONSIVE OPTIMIZADO FIT ZONE, FEST, STUDIO, EVENTOS
 ================================= */
 
@@ -539,205 +532,528 @@ p span {
    MEDIA QUERIES
 =============================== */
 
-/* Laptops y tablets grandes */
-@media(max-width:1024px){
-    .actividad {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+/* Laptops (14/15 pulgadas, 1366px a 1440px) */
+@media (max-width: 1440px) {
+    .actividades {
+        max-width: 1100px; /* Reducir ligeramente el ancho máximo para mejor ajuste */
+        padding: 50px 20px;
     }
-    .fila-reversa {
-        flex-direction: column;
+    .actividad {
+        gap: 30px;
+        padding: 1.5rem;
     }
     .contenido h2 {
-        font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+        font-size: clamp(1.4rem, 3vw, 1.8rem); /* Ligeramente más grande para laptops */
     }
     .contenido p {
-        font-size: clamp(.85rem, 2vw, .95rem);
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+    }
+    .imagen img {
+        max-width: 85%; /* Evitar que las imágenes sean demasiado grandes */
+    }
+    .tarjetas {
+        gap: 1.5rem;
+    }
+    .tarjeta {
+        width: 45%; /* Dos tarjetas por fila para mejor uso del espacio */
+        max-width: 400px;
+    }
+    .fitness-fest-container {
+        height: auto; /* Eliminar altura fija para escalado dinámico */
+        max-width: 1200px; /* Limitar ancho para laptops */
+        gap: 0.5rem;
+    }
+    .card {
+        flex: 1 1 200px; /* Asegurar que las tarjetas escalen correctamente */
+    }
+    .card:hover {
+        flex: 1.5; /* Reducir expansión en hover para mejor control */
+        transform: scale(1.05); /* Escala sutil para dispositivos táctiles */
+    }
+    .hero-title {
+        font-size: clamp(3rem, 5vw, 3.5rem); /* Ajustar para pantallas de laptops */
+    }
+    .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.3rem);
+    }
+    .event-container {
+        padding: 25px;
+    }
+    .event-list {
+        max-width: 900px; /* Optimizar para ancho de laptops */
+    }
+    .slider-contenedor {
+        max-width: 500px; /* Ligeramente más grande para laptops */
+    }
+}
+
+/* Tablets (13/14 pulgadas, 1024px a 1366px) */
+@media (max-width: 1366px) {
+    .actividades {
+        max-width: 1000px;
+        padding: 40px 15px;
+    }
+    .actividad {
+        flex-direction: row; /* Mantener diseño en fila para tablets grandes */
+        gap: 20px;
+        padding: 1.5rem;
+    }
+    .fila-reversa {
+        flex-direction: row-reverse;
+    }
+    .contenido {
+        min-width: 200px; /* Ajustar para pantallas de tablets más pequeñas */
+    }
+    .contenido h2 {
+        font-size: clamp(1.3rem, 3vw, 1.7rem);
+    }
+    .contenido p {
+        font-size: clamp(0.85rem, 2vw, 1rem);
     }
     .imagen img {
         max-width: 90%;
     }
     .tarjetas {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1.5rem;
+    }
+    .tarjeta {
+        width: 48%; /* Dos tarjetas por fila para tablets grandes */
+        max-width: 380px;
+    }
+    .fitness-fest-container {
+        flex-direction: row; /* Mantener fila para tablets grandes */
+        height: auto;
+        max-width: 1000px;
+        gap: 0.5rem;
+    }
+    .card {
+        flex: 1 1 180px;
+    }
+    .card:hover {
+        flex: 1.3; /* Menos expansión para táctiles */
+        transform: scale(1.05);
+    }
+    .hero {
+        height: 80vh; /* Reducir altura para mejor visibilidad */
+    }
+    .hero-title {
+        font-size: clamp(2.5rem, 4vw, 3rem);
+    }
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+    .hero-btn {
+        padding: 0.7rem 1.3rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+    .event-container {
+        padding: 20px;
+    }
+    .event-list {
+        max-width: 800px;
+    }
+    .slider-contenedor {
+        max-width: 450px; /* Ajustar para tablets */
+    }
+}
+
+/* Tablets (9/10 pulgadas, 768px a 1024px) */
+@media (max-width: 1024px) {
+    .actividades {
+        max-width: 900px;
+        padding: 40px 15px;
+    }
+    .actividad {
+        flex-direction: column; /* Apilar para tablets más pequeñas */
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    .fila-reversa {
+        flex-direction: column;
+    }
+    .contenido h2 {
+        font-size: clamp(1.2rem, 3vw, 1.6rem);
+    }
+    .contenido p {
+        font-size: clamp(0.8rem, 2vw, 0.95rem);
+    }
+    .imagen img {
+        max-width: 80%;
+    }
+    .tarjetas {
         flex-direction: column;
         align-items: center;
+        gap: 1.2rem;
     }
     .tarjeta {
         width: 90%;
         max-width: 360px;
     }
-}
-
-/* Tablets y móviles grandes */
-@media(max-width:768px){
-    .actividades {
-        padding: 50px 20px 20px;
-    }
-    .pasos-container,
     .fitness-fest-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .paso {
-        flex: 1 1 280px;
-    }
-    .event-container {
-        padding: 20px;
-    }
-}
-
-/* Móviles medianos */
-@media(max-width:600px){
-    .actividades {
-        padding: 40px 15px;
-    }
-    .contenido h2 {
-        font-size: clamp(1.1rem, 3vw, 1.5rem);
-    }
-    .contenido p {
-        font-size: clamp(.8rem, 2vw, .9rem);
-    }
-    .imagen img {
-        max-width: 100%;
-    }
-    .actividad {
-        margin-bottom: 40px;
-        gap: 20px;
-    }
-    .pasos-container,
-    .fitness-fest-container {
+        flex-direction: column; /* Apilar tarjetas para tablets pequeñas */
+        height: auto;
+        max-width: 800px;
         padding: 1rem;
     }
-    .hero-title {
-        font-size: 3rem;
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
-    .hero-subtitle {
-        font-size: 1rem;
+    .card:hover {
+        transform: scale(1.03); /* Escala sutil para táctiles */
     }
-    .hero-btn {
-        padding: .7rem 1.2rem;
-        font-size: .9rem;
-    }
-    .info-section h2 {
-        font-size: 1.5rem;
-    }
-    .info-section p {
-        font-size: .9rem;
-        max-width: 95%;
-    }
-}
-
-/* Móviles pequeños */
-@media(max-width:480px){
-    .actividad {
-        padding: 1.5rem;
-        gap: 15px;
-        margin-bottom: 30px;
-    }
-    .contenido h2 {
-        font-size: 1.2rem;
-    }
-    .contenido p {
-        font-size: .85rem;
-    }
-    .imagen img {
-        padding: .5rem;
-    }
-    .tarjeta {
-        width: 95%;
-        padding: 1.5rem;
+    .hero {
+        height: 70vh; /* Reducir altura */
     }
     .hero-title {
-        font-size: 2.2rem;
+        font-size: clamp(2rem, 4vw, 2.5rem);
     }
     .hero-subtitle {
-        font-size: .9rem;
+        font-size: clamp(0.85rem, 2vw, 1.1rem);
     }
     .hero-btn {
-        padding: .6rem 1rem;
-        font-size: .85rem;
+        padding: 0.6rem 1.2rem;
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
     }
     .info-section h2 {
-        font-size: 1.3rem;
+        font-size: clamp(1.5rem, 3vw, 1.8rem);
     }
     .info-section p {
-        font-size: .85rem;
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        max-width: 90%;
     }
     .event-container {
         padding: 15px;
     }
     .event-list {
-        gap: 15px;
+        max-width: 700px;
     }
-    .date {
-        min-width: 100px;
-        padding: 10px 15px;
-    }
-    .date .mes {
-        font-size: .9rem;
-    }
-    .date .dia {
-        font-size: 1.5rem;
-    }
-    .date .fecha {
-        font-size: .7rem;
-    }
-    .icono img {
-        width: 40px;
-        height: 40px;
-    }
-    .details .hora,
-    .details p {
-        font-size: .8rem;
-    }
-    .details .titulo {
-        font-size: 1rem;
+    .slider-contenedor {
+        max-width: 400px;
     }
 }
 
-/* Móviles muy pequeños */
-@media(max-width:360px){
+/* Tablets y Móviles Grandes (600px a 768px) */
+@media (max-width: 768px) {
+    .actividades {
+        padding: 30px 15px;
+    }
+    .actividad {
+        padding: 1rem;
+        gap: 10px;
+    }
+    .contenido h2 {
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+    }
+    .contenido p {
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
+    }
+    .imagen img {
+        max-width: 90%;
+    }
+    .tarjetas {
+        gap: 1rem;
+    }
+    .tarjeta {
+        width: 95%;
+        padding: 1.2rem;
+    }
+    .fitness-fest-container {
+        padding: 0.8rem;
+        max-width: 600px;
+    }
+    .pasos-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .paso {
+        flex: 1 1 100%;
+        max-width: 350px;
+    }
+    .hero {
+        height: 60vh;
+    }
     .hero-title {
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
     }
     .hero-subtitle {
-        font-size: .8rem;
+        font-size: clamp(0.8rem, 2vw, 1rem);
     }
     .hero-btn {
-        padding: .5rem .8rem;
-        font-size: .8rem;
+        padding: 0.6rem 1rem;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
     }
+    .info-section h2 {
+        font-size: clamp(1.3rem, 3vw, 1.6rem);
+    }
+    .info-section p {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+    .event-container {
+        padding: 10px;
+    }
+    .event-list {
+        max-width: 600px;
+        gap: 10px;
+    }
+    .date {
+        min-width: 90px;
+        padding: 8px 12px;
+    }
+    .date .mes {
+        font-size: 0.85rem;
+    }
+    .date .dia {
+        font-size: 1.4rem;
+    }
+    .date .fecha {
+        font-size: 0.65rem;
+    }
+    .icono img {
+        width: 35px;
+        height: 35px;
+    }
+    .details .hora,
+    .details p {
+        font-size: 0.75rem;
+    }
+    .details .titulo {
+        font-size: 0.95rem;
+    }
+    .slider-contenedor {
+        max-width: 350px;
+    }
+}
+
+/* Móviles (hasta 600px) */
+@media (max-width: 600px) {
     .actividades {
-        padding: 30px 10px;
+        padding: 25px 10px;
+    }
+    .actividad {
+        padding: 0.8rem;
+        gap: 8px;
+        margin-bottom: 30px;
+    }
+    .contenido h2 {
+        font-size: clamp(1rem, 3vw, 1.3rem);
+    }
+    .contenido p {
+        font-size: clamp(0.7rem, 2vw, 0.85rem);
+    }
+    .imagen img {
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+    .tarjetas {
+        gap: 0.8rem;
+    }
+    .tarjeta {
+        width: 100%;
+        padding: 1rem;
+    }
+    .fitness-fest-container {
+        padding: 0.5rem;
+        max-width: 100%;
+    }
+    .pasos-container {
+        padding: 0.8rem;
+    }
+    .hero {
+        height: 50vh;
+    }
+    .hero-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    .hero-subtitle {
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
+    }
+    .hero-btn {
+        padding: 0.5rem 0.9rem;
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+    }
+    .info-section h2 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+    .info-section p {
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+        max-width: 95%;
+    }
+    .event-container {
+        padding: 10px;
+    }
+    .event-list {
+        gap: 8px;
+    }
+    .date {
+        min-width: 80px;
+        padding: 8px 10px;
+    }
+    .date .mes {
+        font-size: 0.8rem;
+    }
+    .date .dia {
+        font-size: 1.3rem;
+    }
+    .date .fecha {
+        font-size: 0.6rem;
+    }
+    .icono img {
+        width: 30px;
+        height: 30px;
+    }
+    .details .hora,
+    .details p {
+        font-size: 0.7rem;
+    }
+    .details .titulo {
+        font-size: 0.9rem;
+    }
+    .slider-contenedor {
+        max-width: 100%;
+    }
+}
+
+/* Móviles Pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .actividades {
+        padding: 20px 8px;
+    }
+    .actividad {
+        padding: 0.6rem;
+        gap: 6px;
+        margin-bottom: 25px;
+    }
+    .contenido {
+        min-width: 0;
+    }
+    .contenido h2 {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+    }
+    .contenido p {
+        font-size: clamp(0.65rem, 2vw, 0.8rem);
+    }
+    .imagen img {
+        padding: 0.3rem;
+    }
+    .tarjetas {
+        gap: 0.6rem;
+    }
+    .tarjeta {
+        width: 100%;
+        padding: 0.8rem;
+    }
+    .fitness-fest-container {
+        padding: 0.5rem;
+    }
+    .pasos-container {
+        padding: 0.5rem;
+    }
+    .hero {
+        height: 45vh;
+    }
+    .hero-title {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+    }
+    .hero-subtitle {
+        font-size: clamp(0.7rem, 2vw, 0.85rem);
+    }
+    .hero-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
+    }
+    .info-section h2 {
+        font-size: clamp(1.1rem, 3vw, 1.3rem);
+    }
+    .info-section p {
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
+    }
+    .event-container {
+        padding: 8px;
+    }
+    .event-list {
+        gap: 6px;
+    }
+    .date {
+        min-width: 70px;
+        padding: 6px 8px;
+    }
+    .date .mes {
+        font-size: 0.75rem;
+    }
+    .date .dia {
+        font-size: 1.2rem;
+    }
+    .date .fecha {
+        font-size: 0.55rem;
+    }
+    .icono img {
+        width: 25px;
+        height: 25px;
+    }
+    .details .hora,
+    .details p {
+        font-size: 0.65rem;
+    }
+    .details .titulo {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móviles Muy Pequeños (hasta 360px) */
+@media (max-width: 360px) {
+    .actividades {
+        padding: 15px 5px;
     }
     .actividad {
         padding: 0.5rem;
         gap: 5px;
+        margin-bottom: 20px;
     }
-    .contenido {
-        min-width: 0; /* Eliminar min-width para permitir ajuste */
-    }
-
     .contenido h2 {
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 3vw, 1rem);
     }
-    .contenido p,
-    .info-section {
-        font-size: 0.75rem;
-        line-height: 1.4;
-    }
-    .info-section h2 {
-        font-size: 1.2rem;
+    .contenido p {
+        font-size: clamp(0.6rem, 2vw, 0.75rem);
     }
     .tarjeta {
-        padding: 1rem;
+        padding: 0.6rem;
     }
     .fitness-fest-container {
-        padding: 1rem;
-        height: auto; /* Permitir altura dinámica */
+        padding: 0.3rem;
+    }
+    .pasos-container {
+        padding: 0.3rem;
+    }
+    .hero {
+        height: 40vh;
+    }
+    .hero-title {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+    .hero-subtitle {
+        font-size: clamp(0.65rem, 2vw, 0.8rem);
+    }
+    .hero-btn {
+        padding: 0.4rem 0.7rem;
+        font-size: clamp(0.65rem, 2vw, 0.75rem);
+    }
+    .info-section h2 {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+    .info-section p {
+        font-size: clamp(0.65rem, 2vw, 0.75rem);
+    }
+    .event-container {
+        padding: 5px;
+    }
+    .event-list {
+        gap: 5px;
     }
     .slider-contenedor {
-        max-width: 100%; /* Asegurar que no exceda el viewport */
+        max-width: 100%;
     }
 }

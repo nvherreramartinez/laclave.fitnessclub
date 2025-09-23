@@ -48,7 +48,8 @@ video {
 }
 
 .welcome-logo {
-    width: 500px;
+    width: clamp(150px, 40vw, 400px);
+    /* AJUSTE: Tamaño dinámico para tablets y notebooks */
     margin-bottom: 2rem;
     animation: spinLogo 2s ease-in-out;
 }
@@ -70,13 +71,14 @@ video {
 .welcome-content #enterButton {
     background-color: #a5744c;
     color: #fff;
-    padding: 0.75rem 1.5rem;
+    padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem); /* AJUSTE: Padding dinámico */
     border-radius: 2rem;
     font-weight: bold;
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
+    font-size: clamp(0.9rem, 2vw, 1rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .welcome-content #enterButton:hover {
@@ -95,8 +97,8 @@ video {
     width: 100%;
     background: #3b3c42;
     color: #fff;
-    padding: 15px 20px;
-    font-size: 0.9rem;
+    padding: clamp(10px, 2vw, 15px) clamp(10px, 3vw, 20px); /* AJUSTE: Padding dinámico */
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -131,11 +133,12 @@ video {
     background-color: #d4a158;
     color: #2c2023;
     border: none;
-    padding: 8px 16px;
+    padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2vw, 16px); /* AJUSTE: Padding dinámico */
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .cookie-actions button:hover {
@@ -159,15 +162,15 @@ video {
     opacity: 1;
     visibility: visible;
     transition: opacity 1s ease, visibility 1s ease;
-    padding: 0 20px;
+    padding: 0 clamp(10px, 4vw, 20px); /* AJUSTE: Padding dinámico */
     z-index: 9999;
 }
 
 .cookie-modal-content {
     background: #f2d28b;
-    padding: 20px;
+    padding: clamp(15px, 3vw, 20px);
     border-radius: 4px;
-    max-width: 400px;
+    max-width: clamp(300px, 80vw, 400px); /* AJUSTE: Ancho dinámico */
     width: 90%;
 }
 
@@ -183,11 +186,14 @@ video {
     background-color: #000000;
     min-height: 70px;
     display: flex;
+    align-items: center; /* AJUSTE: Mejor alineación */
 }
 
 .navbar-custom .nav-link {
     color: #ffffff;
     transition: 0.3s;
+    padding: clamp(8px, 2vw, 10px) clamp(10px, 2vw, 15px); /* AJUSTE: Padding dinámico */
+    font-size: clamp(0.9rem, 1.5vw, 1rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .navbar-custom .nav-link:hover {
@@ -196,7 +202,19 @@ video {
 }
 
 .navbar-brand img {
-    height: 30px;
+    height: clamp(28px, 5vw, 35px); /* AJUSTE: Tamaño dinámico */
+    width: auto; /* AJUSTE: Mantener proporción */
+}
+
+/* AJUSTE: Asegurar que el toggler sea visible en tablets */
+.navbar-toggler {
+    border: none;
+    padding: 5px;
+}
+
+.container-fluid {
+    padding: 0 clamp(10px, 3vw, 15px); /* AJUSTE: Padding dinámico */
+    background-color: #000000;
 }
 
 .container {
@@ -228,14 +246,15 @@ video {
 
 .hero-title {
     display: inline-block;
-    font-size: 48px;
+    font-size: clamp(28px, 5vw, 44px); /* AJUSTE: Tamaño dinámico */
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 3vw, 20px);
     color: #fdd835;
     text-align: right;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-origin: center;
 }
+
 
 .hero-title:hover {
     transform: scale(1.05);
@@ -252,10 +271,9 @@ video {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    /* ✅ antes height fija */
     height: auto;
     text-align: center;
-    padding: 20px;
+    padding: clamp(15px, 4vw, 20px); /* AJUSTE: Padding dinámico */
 }
 
 .second-fest {
@@ -264,10 +282,9 @@ video {
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    /* ✅ antes height fija */
     height: auto;
     text-align: center;
-    padding: 20px;
+    padding: clamp(15px, 4vw, 20px); /* AJUSTE: Padding dinámico */
     background: linear-gradient(rgba(255, 255, 255, 0.241), rgba(255, 255, 255, 0.19)),
         url("https://i.postimg.cc/6q59DYLs/index-final-2.png") center/cover no-repeat fixed;
     backdrop-filter: blur(12px);
@@ -278,17 +295,18 @@ video {
 .second-title {
     display: block;
     text-align: center;
-    font-size: 4rem;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* AJUSTE: Tamaño dinámico */
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    margin: 0 auto 20px;
+    letter-spacing: clamp(2px, 0.5vw, 3px); /* AJUSTE: Espaciado dinámico */
+    margin: 0 auto clamp(15px, 3vw, 20px);
     color: #fdd835;
     transition: transform 0.3s ease, text-shadow 0.3s ease;
     transform-origin: center;
     max-width: 100%;
     white-space: normal;
 }
+
 
 .second-title span {
     color: #d4a158;
@@ -300,19 +318,20 @@ video {
 }
 
 .second-subtitle {
-    font-size: 1.2rem;
-    margin: 1rem 0 2rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* AJUSTE: Tamaño dinámico */
+    margin: clamp(0.8rem, 2vw, 1rem) 0 clamp(1.5rem, 3vw, 2rem);
     color: #f2d28b;
 }
 
 .second-btn {
     background: #d4a158;
     color: #2c2023;
-    padding: 0.8rem 1.5rem;
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem); /* AJUSTE: Padding dinámico */
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: clamp(0.9rem, 1.5vw, 1rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .second-btn:hover {
@@ -327,9 +346,9 @@ video {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: clamp(15px, 3vw, 30px); /* AJUSTE: Gap dinámico */
     width: 100%;
-    max-width: 1200px;
+    max-width: clamp(900px, 90vw, 1200px); /* AJUSTE: Ancho dinámico */
     margin: 0 auto;
 }
 
@@ -337,12 +356,11 @@ video {
     position: relative;
     overflow: hidden;
     width: 100%;
-    /* ✅ antes 250px fijo */
-    max-width: 250px;
+    max-width: clamp(180px, 25vw, 220px); /* AJUSTE: Tamaño optimizado */
     aspect-ratio: 3 / 5;
-    /* ✅ mantiene proporción */
     flex-shrink: 0;
 }
+
 
 .workout-card img {
     max-width: 100%;
@@ -358,10 +376,10 @@ video {
 
 .overlay-text {
     position: absolute;
-    bottom: 20px;
+    bottom: clamp(10px, 2vw, 15px); /* AJUSTE: Posición dinámica */
     width: 100%;
     text-align: center;
-    font-size: 24px;
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem); /* AJUSTE: Tamaño dinámico */
     font-weight: bold;
     color: #ffffff;
     text-transform: uppercase;
@@ -378,7 +396,8 @@ video {
 =============================== */
 .fitness_fest {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    /* AJUSTE: Cambiado de height a min-height */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -390,10 +409,10 @@ video {
 .fitness-overlay {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.795);
-    padding: 2rem;
+    padding: clamp(1.5rem, 4vw, 2rem); /* AJUSTE: Padding dinámico */
     border-radius: 3px;
-    max-width: 900px;
-    margin: 0 20px;
+    max-width: clamp(500px, 80vw, 800px); /* AJUSTE: Ancho dinámico */
+    margin: 0 clamp(10px, 3vw, 20px);
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
@@ -409,11 +428,12 @@ video {
 .fitness_fest-btn {
     background: #d4a158;
     color: #2c2023;
-    padding: 0.8rem 1.5rem;
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.5rem); /* AJUSTE: Padding dinámico */
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: clamp(0.9rem, 1.5vw, 1rem); /* AJUSTE: Tamaño dinámico */
 }
 
 .fitness_fest-btn:hover {
@@ -428,11 +448,13 @@ video {
     background: url("https://i.postimg.cc/6q59DYLs/index-final-2.png") center/cover no-repeat fixed;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(240px, 28vw, 300px), 1fr)); /* AJUSTE: Columnas dinámicas */
+    gap: clamp(1.5rem, 3vw, 2rem);
     align-items: center;
-    padding: 8vh clamp(1rem, 4vw, 4rem);
+    padding: clamp(4vh, 6vw, 6vh) clamp(1rem, 3vw, 3rem); /* AJUSTE: Padding dinámico */
 }
+
+
 
 .feature {
     border-top: 2px solid rgba(255, 255, 255, .4);
@@ -456,14 +478,15 @@ video {
 }
 
 .feature h3 {
-    font-size: clamp(1.8rem, 3vw+1rem, 3rem);
-    margin-bottom: 1rem;
+    font-size: clamp(1.4rem, 2.5vw, 2rem); /* AJUSTE: Tamaño dinámico */
+    margin-bottom: clamp(0.8rem, 2vw, 1rem);
 }
 
 .feature p {
-    font-size: clamp(.9rem, 1vw+.4rem, 1.25rem);
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* AJUSTE: Tamaño dinámico */
     max-width: 38ch;
 }
+
 
 /* ===============================
    H2 GENERAL
@@ -477,14 +500,154 @@ h2 {
 /* ===============================
    RESPONSIVE
 =============================== */
+/* Tablets de 9-10 pulgadas (600px - 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .navbar-custom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: clamp(10px, 2vw, 15px); /* AJUSTE: Padding dinámico */
+    }
+
+    .navbar-brand img {
+        height: clamp(28px, 5vw, 32px);
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        gap: clamp(8px, 2vw, 12px); /* AJUSTE: Espaciado dinámico */
+    }
+
+    .navbar-custom .nav-link {
+        padding: clamp(6px, 1.5vw, 8px) clamp(8px, 2vw, 10px);
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    }
+
+    .hero-title {
+        font-size: clamp(26px, 4.5vw, 38px);
+        text-align: center; /* AJUSTE: Centrado para mejor legibilidad */
+    }
+
+    .second-title {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        letter-spacing: clamp(2px, 0.5vw, 3px);
+    }
+
+    .second-subtitle {
+        font-size: clamp(0.8rem, 1.8vw, 1rem);
+    }
+
+    .workouts-container {
+        gap: clamp(12px, 2.5vw, 20px);
+        max-width: clamp(700px, 90vw, 900px); /* AJUSTE: Ancho optimizado */
+    }
+
+    .workout-card {
+        max-width: clamp(160px, 23vw, 200px); /* AJUSTE: Tamaño más pequeño */
+    }
+
+    .feature-section {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 25vw, 280px), 1fr));
+        padding: clamp(3vh, 5vw, 5vh) clamp(1rem, 2.5vw, 2rem);
+    }
+}
+
+/* Tablets de 13-14 pulgadas y notebooks pequeños (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .navbar-custom {
+        padding: clamp(10px, 2vw, 15px);
+    }
+
+    .navbar-brand img {
+        height: clamp(30px, 4vw, 35px);
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 4.5vw, 40px);
+        text-align: right;
+    }
+
+    .second-title {
+        font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+        letter-spacing: clamp(2.5px, 0.5vw, 3.5px);
+    }
+
+    .workouts-container {
+        gap: clamp(15px, 3vw, 25px);
+        max-width: clamp(800px, 90vw, 1000px);
+    }
+
+    .workout-card {
+        max-width: clamp(180px, 22vw, 210px); /* AJUSTE: Tamaño optimizado */
+    }
+
+    .feature-section {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 25vw, 300px), 1fr));
+        padding: clamp(4vh, 5vw, 6vh) clamp(1.5rem, 3vw, 2.5rem);
+    }
+    
+
+    /* AJUSTE: Específico para 1366x768px (notebooks 14-15 pulgadas) */
+    @media (max-width: 1366px) {
+        .workouts-container {
+            gap: clamp(10px, 2vw, 15px);
+            max-width: clamp(700px, 85vw, 900px);
+        }
+
+        .workout-card {
+            max-width: clamp(150px, 20vw, 180px); /* AJUSTE: Evitar desbordes */
+        }
+
+        .hero-title {
+            font-size: clamp(28px, 4vw, 36px);
+        }
+
+        .feature-section {
+            grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 25vw, 280px), 1fr));
+            padding: clamp(3vh, 4vw, 5vh) clamp(1rem, 2vw, 2rem);
+        }
+    }
+}
+
+/* Notebooks de 14-15 pulgadas y superiores (>1440px) */
+@media (min-width: 1441px) {
+    .navbar-custom {
+        padding: clamp(15px, 2vw, 20px);
+    }
+
+    .hero-title {
+        font-size: clamp(36px, 5vw, 44px);
+    }
+
+    .second-title {
+        font-size: clamp(2.8rem, 5vw, 3.8rem);
+    }
+
+    .workouts-container {
+        gap: clamp(20px, 3.5vw, 30px);
+        max-width: clamp(1000px, 90vw, 1200px);
+    }
+
+    .workout-card {
+        max-width: clamp(200px, 20vw, 220px);
+    }
+
+    .feature-section {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25vw, 320px), 1fr));
+        padding: clamp(5vh, 6vw, 7vh) clamp(2rem, 3.5vw, 3rem);
+    }
+
+}
+
+/* Ajustes previos mantenidos para pantallas más pequeñas */
 @media (max-width: 992px) {
     .second-title {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 4vw, 2.5rem);
         letter-spacing: 2.5px;
     }
 
     .second-subtitle {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2vw, 1rem);
     }
 
     .second-btn {
@@ -510,16 +673,15 @@ h2 {
     }
 }
 
-/* ✅ ajuste intermedio para hero */
 @media (max-width: 820px) {
     .hero-title {
-        font-size: 36px;
+        font-size: clamp(28px, 4vw, 36px);
     }
 }
 
 @media (max-width: 768px) {
     .welcome-logo {
-        width: 180px;
+        width: clamp(150px, 35vw, 180px);
     }
 
     .welcome-btn {
@@ -528,12 +690,11 @@ h2 {
     }
 
     .second-title {
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 4vw, 2rem);
         letter-spacing: 2px;
     }
 }
 
-/* ✅ cookie banner apilado */
 @media (max-width: 699px) {
     .feature-section {
         padding: 4vh 1rem;
@@ -569,7 +730,7 @@ h2 {
     }
 
     .second-title {
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 4vw, 2rem);
         letter-spacing: 2px;
     }
 
@@ -594,7 +755,7 @@ h2 {
 
 @media (max-width: 400px) {
     .welcome-logo {
-        width: 150px;
+        width: clamp(120px, 35vw, 150px);
     }
 
     .welcome-btn {
@@ -602,55 +763,58 @@ h2 {
     }
 
     .second-title {
-        font-size: 1.8rem;
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
         letter-spacing: 1.5px;
     }
 }
 
 @media (max-width: 375px) {
     .hero-title {
-        font-size: 32px;
+        font-size: clamp(24px, 4vw, 32px);
     }
 
     .feature h3 {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
 
     .feature p {
-        font-size: 0.9rem;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
     }
 
     .second-title {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 3.5vw, 1.5rem);
         letter-spacing: 1px;
     }
 }
 
-/* ✅ Ajuste puntual para 360px */
 @media (max-width: 360px) {
     .welcome-logo {
-        width: clamp(120px, 40vw, 140px);
-        /* Ajustar dinámicamente */
+        width: clamp(100px, 35vw, 120px);
     }
 
     .container {
         padding: 10px;
-        /* Reducir aún más el padding */
     }
 
     .workouts-container {
         gap: 20px;
-        /* Reducir el gap */
     }
 
     .workout-card {
         max-width: 100%;
-        /* Asegurar que no exceda el viewport */
     }
 
     .second-title {
-        font-size: 1rem;
+        font-size: clamp(1rem, 3vw, 1.2rem);
         letter-spacing: 0.5px;
         padding: 0 5px;
+    }
+}
+
+/* AJUSTE: Alta densidad de píxeles (Retina, etc.) */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
     }
 }

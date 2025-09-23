@@ -1,17 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
     // --- Newsletter ---
     const formNewsletter = document.getElementById("form-newsletter");
-    const feedback = document.getElementById("newsletter-feedback");
+    const emailInput = formNewsletter?.querySelector('input[name="email"]');
 
-    if (formNewsletter) {
+    if (formNewsletter && emailInput) {
         formNewsletter.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const email = formNewsletter.email.value.trim();
+            const email = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
             if (!email) {
-                feedback.textContent = "⚠️ El email es obligatorio";
-                feedback.className = "error";
-                feedback.classList.remove("fade-out");
+                Swal.fire({
+                    icon: "warning",
+                    title: "Email obligatorio",
+                    text: "Por favor, ingresa un email.",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "var(--marron)",
+                    background: "var(--crema)",
+                    customClass: {
+                        popup: "swal-custom",
+                        title: "swal-title",
+                        content: "swal-content",
+                        confirmButton: "swal-button"
+                    }
+                }).then(() => emailInput.focus());
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Email inválido",
+                    text: "Por favor, ingresa un email válido.",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "var(--marron)",
+                    background: "var(--crema)",
+                    customClass: {
+                        popup: "swal-custom",
+                        title: "swal-title",
+                        content: "swal-content",
+                        confirmButton: "swal-button"
+                    }
+                }).then(() => emailInput.focus());
                 return;
             }
 
@@ -31,30 +62,42 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 if (response.ok) {
-                    feedback.textContent = "✅ ¡Gracias por suscribirte! Ya formas parte del newsletter.";
-                    feedback.className = "success";
-                    feedback.classList.remove("fade-out");
+                    Swal.fire({
+                        icon: "success",
+                        title: "¡Suscripción exitosa!",
+                        text: "Gracias por suscribirte al newsletter.",
+                        confirmButtonText: "OK",
+                        confirmButtonColor: "var(--marron)",
+                        background: "var(--crema)",
+                        customClass: {
+                            popup: "swal-custom",
+                            title: "swal-title",
+                            content: "swal-content",
+                            confirmButton: "swal-button"
+                        }
+                    }).then(() => emailInput.focus());
                     formNewsletter.reset();
-
-                    // Desaparece el mensaje después de 5 segundos
-                    setTimeout(() => {
-                        feedback.classList.add("fade-out");
-                    }, 5000);
                 } else {
                     throw new Error("Error al enviar");
                 }
             } catch (error) {
-                feedback.textContent = "❌ No se pudo enviar. Intentá nuevamente más tarde.";
-                feedback.className = "error";
-                feedback.classList.remove("fade-out");
-
-                setTimeout(() => {
-                    feedback.classList.add("fade-out");
-                }, 5000);
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "No se pudo enviar. Intentá nuevamente más tarde.",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "var(--marron)",
+                    background: "var(--crema)",
+                    customClass: {
+                        popup: "swal-custom",
+                        title: "swal-title",
+                        content: "swal-content",
+                        confirmButton: "swal-button"
+                    }
+                }).then(() => emailInput.focus());
             }
         });
     }
-
 
     // --- WhatsApp dinámico ---
     const whatsappLink = document.getElementById("whatsapp-link");
@@ -65,5 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         const url = `https://wa.me/${phoneNumber}?text=${message}`;
         whatsappLink.href = url;
+        whatsappLink.setAttribute("aria-label", "Chatear con nosotros en WhatsApp");
     }
 });
