@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- Newsletter ---
+    // --- Newsletter con SweetAlert ---
     const formNewsletter = document.getElementById("form-newsletter");
     const emailInput = formNewsletter?.querySelector('input[name="email"]');
 

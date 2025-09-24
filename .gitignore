@@ -19,9 +19,13 @@ admin-panel
 # Entornos (si existieran en el futuro)
 .env
 .env.example
+.env.local
 
-# Firebase cache
+
+# Firebase
 .firebase/
+firebase.js 
+firebase-panel.js
 
 # Windows
 desktop.ini

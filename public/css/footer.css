@@ -106,8 +106,6 @@ footer {
     border-radius: 5px;
     font-size: clamp(0.8rem, 1.5vw, 0.9rem);
     outline: none;
-    background: var(--crema); /* AJUSTE: Fondo explícito para contraste */
-    color: var(--negro); /* AJUSTE: Texto oscuro para legibilidad */
 }
 
 .footer-derecha button {
@@ -163,56 +161,13 @@ footer {
     transform: scale(1.5);
 }
 
-/* Estilos para SweetAlert2 */
-.swal-custom {
-    max-width: clamp(250px, 80vw, 400px);
-    padding: clamp(1rem, 2vw, 1.5rem);
-    font-family: inherit;
-    background: var(--crema);
-    border-radius: 8px;
-}
-
-.swal-title {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-    color: var(--negro);
-}
-
-.swal-content {
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    color: var(--negro);
-}
-
-.swal-button {
-    background: var(--marron);
-    color: var(--blanco);
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    padding: clamp(0.5rem, 1vw, 0.8rem);
-    border-radius: 5px; /* AJUSTE: Igual que .footer-derecha button */
-    border: none;
-}
-
-.swal-button:hover {
-    background: var(--amarillo);
-}
-
-.swal2-icon.swal2-success {
-    border-color: var(--amarillo);
-    color: var(--amarillo);
-}
-
-.swal2-icon.swal2-error,
-.swal2-icon.swal2-warning {
-    border-color: #d9534f;
-    color: #d9534f;
-}
-
 /* ===============================
    FOOTER RESPONSIVE
 =============================== */
-/* Tablets de 9-10 pulgadas (600px - 1024px) */
+/* Celulares grandes y tablets pequeñas (769px - 992px) */
 @media (min-width: 769px) and (max-width: 992px) {
     .footer-content {
-        grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 280px), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 280px), 1fr)); /* AJUSTE: 2 columnas */
         gap: clamp(1rem, 2.5vw, 1.5rem);
     }
 
@@ -231,7 +186,7 @@ footer {
 
     .footer-derecha form {
         max-width: clamp(200px, 45vw, 280px);
-        flex-direction: row;
+        flex-direction: row; /* AJUSTE: Mantener formulario en fila */
         gap: clamp(6px, 1.5vw, 8px);
     }
 
@@ -246,24 +201,6 @@ footer {
 
     .footer-social-icons a img {
         width: clamp(22px, 4.5vw, 26px);
-    }
-
-    .swal-custom {
-        max-width: clamp(250px, 85vw, 350px);
-        padding: clamp(0.8rem, 1.5vw, 1rem);
-    }
-
-    .swal-title {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-    }
-
-    .swal-content {
-        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
-    }
-
-    .swal-button {
-        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
-        padding: clamp(0.3rem, 1vw, 0.5rem);
     }
 }
 
@@ -289,7 +226,7 @@ footer {
 
     .footer-derecha form {
         max-width: clamp(180px, 45vw, 250px);
-        flex-direction: column;
+        flex-direction: column; /* AJUSTE: Apilar formulario */
     }
 
     .footer-derecha input[type="email"],
@@ -304,24 +241,6 @@ footer {
 
     .footer-social-icons a img {
         width: clamp(22px, 4.5vw, 26px);
-    }
-
-    .swal-custom {
-        max-width: clamp(250px, 90vw, 350px);
-        padding: clamp(0.8rem, 1.5vw, 1rem);
-    }
-
-    .swal-title {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-    }
-
-    .swal-content {
-        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
-    }
-
-    .swal-button {
-        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
-        padding: clamp(0.3rem, 1vw, 0.5rem);
     }
 }
 
@@ -355,11 +274,6 @@ footer {
 
     .footer-social-icons a img {
         width: clamp(24px, 4vw, 28px);
-    }
-
-    .swal-custom {
-        max-width: clamp(250px, 80vw, 400px);
-        padding: clamp(1rem, 2vw, 1.5rem);
     }
 
     /* AJUSTE: Específico para 1366x768px (notebooks 14-15 pulgadas) */
@@ -455,24 +369,6 @@ footer {
     .footer-copy {
         margin-top: clamp(1rem, 2vw, 1.5rem);
     }
-
-    .swal-custom {
-        max-width: clamp(250px, 90vw, 350px);
-        padding: clamp(0.8rem, 1.5vw, 1rem);
-    }
-
-    .swal-title {
-        font-size: clamp(1rem, 2vw, 1.2rem);
-    }
-
-    .swal-content {
-        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
-    }
-
-    .swal-button {
-        font-size: clamp(0.7rem, 1.5vw, 0.8rem);
-        padding: clamp(0.3rem, 1vw, 0.5rem);
-    }
 }
 
 /* Muy pequeños (<480px) */
@@ -501,11 +397,6 @@ footer {
     .footer-social-icons a img {
         width: clamp(20px, 5vw, 24px);
     }
-
-    .swal-custom {
-        max-width: clamp(200px, 95vw, 300px);
-        padding: clamp(0.5rem, 1vw, 0.8rem);
-    }
 }
 
 /* Muy pequeños (<360px) */
@@ -526,11 +417,6 @@ footer {
     .footer-social-icons a img {
         width: clamp(18px, 5vw, 22px);
     }
-
-    .swal-custom {
-        max-width: clamp(200px, 95vw, 300px);
-        padding: clamp(0.5rem, 1vw, 0.8rem);
-    }
 }
 
 /* AJUSTE: Alta densidad de píxeles (Retina, etc.) */
@@ -539,4 +425,69 @@ footer {
     .footer-social-icons a img {
         image-rendering: -webkit-optimize-contrast;
     }
+}
+/* ===============================
+   FIN FOOTER
+=============================== */
+
+/* ===============================
+   SweetAlert2 - Personalización
+   (Colores combinados con el footer)
+=============================== */
+.swal2-popup {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.swal2-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #5a3030; /* Bordó del footer */
+}
+
+.swal2-html-container {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Botones */
+.swal2-styled.swal2-confirm {
+    background-color: #c1916b !important; /* Beige del footer */
+    border-radius: 6px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    transition: background-color 0.3s ease;
+}
+
+.swal2-styled.swal2-confirm:hover {
+    background-color: #a5744c !important;
+}
+
+.swal2-styled.swal2-cancel {
+    background-color: #777 !important;
+    border-radius: 6px !important;
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.9rem !important;
+}
+
+.swal2-styled.swal2-cancel:hover {
+    background-color: #555 !important;
+}
+
+/* Iconos */
+.swal2-icon.swal2-success {
+    border-color: #4CAF50 !important;
+    color: #4CAF50 !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: #ff5252 !important;
+    color: #ff5252 !important;
+}
+
+.swal2-icon.swal2-info {
+    border-color: #5a3030 !important;
+    color: #5a3030 !important;
 }
