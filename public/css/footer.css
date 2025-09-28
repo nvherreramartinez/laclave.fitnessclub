@@ -1,124 +1,105 @@
 /* ===============================
-   FOOTER
+   FOOTER BASE
 =============================== */
 footer {
     background-color: #5a3030;
     color: #ffffff;
-    padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem);
-    min-height: clamp(200px, 30vh, 250px);
-}
-
-.footer-inner {
-    overflow: hidden;
-    max-width: clamp(900px, 90vw, 1200px);
-    margin: 0 auto;
+    padding: 20px;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 300px), 1fr));
-    gap: clamp(1.5rem, 3vw, 2rem);
-    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .footer-column {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
 }
 
 /* Izquierda */
 .footer-izquierda {
     flex: 1;
-    max-width: clamp(250px, 40vw, 350px);
+    min-width: 200px;
+    align-items: flex-start;
 }
-
 .footer-izquierda img {
-    width: clamp(80px, 20vw, 120px);
+    width: 80px;
     height: auto;
-    margin-bottom: clamp(0.8rem, 2vw, 1rem);
 }
 
 .footer-copy {
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    margin-top: clamp(1rem, 2vw, 1.5rem);
+    font-size: 0.75rem;
+    margin-top: 15px;
     line-height: 1.4;
     color: #ddd;
 }
-
 .footer-copy a {
     color: #c1916b;
     text-decoration: none;
 }
-
 .footer-copy a:hover {
     text-decoration: underline;
 }
 
-/* Centro - enlaces legales */
+/* Centro */
 .footer-enlaces {
     flex: 1;
-    max-width: clamp(150px, 25vw, 200px);
+    min-width: 150px;
     display: flex;
     flex-direction: column;
-    gap: clamp(8px, 1.5vw, 10px);
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    gap: 5px;
+    font-size: 0.75rem;
 }
-
 .footer-enlaces a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .footer-enlaces a:hover {
     color: #c1916b;
 }
 
-/* Derecha - newsletter */
+/* Derecha */
 .footer-derecha {
     flex: 1.5;
-    max-width: clamp(250px, 40vw, 350px);
+    min-width: 250px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
-
 .footer-derecha h4 {
-    margin-bottom: clamp(0.5rem, 1.5vw, 0.8rem);
+    margin-bottom: 8px;
     font-weight: 600;
-    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    font-size: 0.85rem;
 }
-
 .footer-derecha form {
     display: flex;
-    gap: clamp(6px, 1.5vw, 8px);
+    gap: 8px;
     width: 100%;
-    max-width: clamp(200px, 50vw, 300px);
 }
-
 .footer-derecha input[type="email"] {
     flex: 1;
-    padding: clamp(8px, 1.5vw, 10px);
+    padding: 8px 10px;
     border: none;
     border-radius: 5px;
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    font-size: 0.8rem;
     outline: none;
 }
-
 .footer-derecha button {
-    padding: clamp(8px, 1.5vw, 10px) clamp(12px, 2vw, 16px);
+    padding: 8px 16px;
     background-color: #c1916b;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    font-size: 0.8rem;
     transition: background-color 0.3s ease;
 }
-
 .footer-derecha button:hover {
     background-color: #a5744c;
 }
@@ -126,19 +107,15 @@ footer {
 /* Redes sociales */
 .footer-social-icons {
     display: flex;
-    gap: clamp(6px, 1.5vw, 8px);
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: clamp(0.8rem, 2vw, 1rem);
+    gap: 8px;
+    margin-top: 10px;
 }
-
 .footer-social-icons a img {
-    width: clamp(24px, 5vw, 28px);
-    height: auto;
+    width: 24px;
+    height: 24px;
     filter: invert(100%);
     transition: transform 0.3s ease;
 }
-
 .footer-social-icons a img:hover {
     transform: scale(1.25);
 }
@@ -146,192 +123,100 @@ footer {
 /* Scroll to top */
 .scroll-to-top {
     display: inline-block;
-    line-height: 1.4;
-    margin-top: clamp(0.8rem, 2vw, 1rem);
-    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    margin-top: 10px;
+    font-size: 0.75rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .scroll-to-top:hover {
     color: #c1916b;
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 /* ===============================
-   FOOTER RESPONSIVE
+   RESPONSIVE FOOTER
+   (De mayor a menor)
 =============================== */
-/* Celulares grandes y tablets pequeñas (769px - 992px) */
-@media (min-width: 769px) and (max-width: 992px) {
-    .footer-content {
-        grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 280px), 1fr)); /* AJUSTE: 2 columnas */
-        gap: clamp(1rem, 2.5vw, 1.5rem);
-    }
 
-    .footer-izquierda {
-        max-width: clamp(220px, 35vw, 300px);
-    }
-
-    .footer-enlaces {
-        max-width: clamp(140px, 25vw, 180px);
-        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    }
-
-    .footer-derecha {
-        max-width: clamp(220px, 35vw, 300px);
-    }
-
-    .footer-derecha form {
-        max-width: clamp(200px, 45vw, 280px);
-        flex-direction: row; /* AJUSTE: Mantener formulario en fila */
-        gap: clamp(6px, 1.5vw, 8px);
-    }
-
-    .footer-derecha input[type="email"],
-    .footer-derecha button {
-        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    }
-
-    .footer-izquierda img {
-        width: clamp(80px, 18vw, 100px);
-    }
-
-    .footer-social-icons a img {
-        width: clamp(22px, 4.5vw, 26px);
-    }
-}
-
-/* Tablets de 9-10 pulgadas (600px - 768px) */
-@media (min-width: 600px) and (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 25vw, 250px), 1fr));
-        gap: clamp(1rem, 2.5vw, 1.5rem);
-    }
-
-    .footer-izquierda {
-        max-width: clamp(200px, 35vw, 300px);
-    }
-
-    .footer-enlaces {
-        max-width: clamp(120px, 20vw, 180px);
-        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    }
-
-    .footer-derecha {
-        max-width: clamp(200px, 35vw, 300px);
-    }
-
-    .footer-derecha form {
-        max-width: clamp(180px, 45vw, 250px);
-        flex-direction: column; /* AJUSTE: Apilar formulario */
-    }
-
-    .footer-derecha input[type="email"],
-    .footer-derecha button {
-        width: 100%;
-        border-radius: 25px;
-    }
-
-    .footer-izquierda img {
-        width: clamp(80px, 18vw, 100px);
-    }
-
-    .footer-social-icons a img {
-        width: clamp(22px, 4.5vw, 26px);
-    }
-}
-
-/* Tablets de 13-14 pulgadas y notebooks pequeños (1025px - 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-    .footer-content {
-        grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 25vw, 280px), 1fr));
-        gap: clamp(1.5rem, 2.5vw, 2rem);
-    }
-
-    .footer-izquierda {
-        max-width: clamp(250px, 30vw, 320px);
-    }
-
-    .footer-enlaces {
-        max-width: clamp(150px, 20vw, 200px);
-        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-    }
-
-    .footer-derecha {
-        max-width: clamp(250px, 30vw, 320px);
-    }
-
-    .footer-derecha form {
-        max-width: clamp(200px, 40vw, 280px);
-    }
-
-    .footer-izquierda img {
-        width: clamp(90px, 15vw, 110px);
-    }
-
-    .footer-social-icons a img {
-        width: clamp(24px, 4vw, 28px);
-    }
-
-    /* AJUSTE: Específico para 1366x768px (notebooks 14-15 pulgadas) */
-    @media (max-width: 1366px) {
-        .footer-content {
-            grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 22vw, 250px), 1fr));
-            gap: clamp(1rem, 2vw, 1.5rem);
-        }
-
-        .footer-izquierda {
-            max-width: clamp(200px, 28vw, 280px);
-        }
-
-        .footer-derecha {
-            max-width: clamp(200px, 28vw, 280px);
-        }
-
-        .footer-derecha form {
-            max-width: clamp(180px, 35vw, 250px);
-        }
-
-        .footer-izquierda img {
-            width: clamp(80px, 15vw, 100px);
-        }
-    }
-}
-
-/* Notebooks de 14-15 pulgadas y superiores (>1440px) */
+/* Notebooks grandes + (>1440px) */
 @media (min-width: 1441px) {
     .footer-content {
         grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 25vw, 300px), 1fr));
         gap: clamp(1.5rem, 3vw, 2rem);
     }
+    .footer-izquierda { max-width: clamp(280px, 30vw, 350px); }
+    .footer-enlaces { max-width: clamp(180px, 20vw, 220px); font-size: clamp(0.9rem, 1.5vw, 1rem); }
+    .footer-derecha { max-width: clamp(280px, 30vw, 350px); }
+    .footer-derecha form { max-width: clamp(220px, 40vw, 300px); }
+    .footer-izquierda img { width: clamp(100px, 15vw, 120px); }
+    .footer-social-icons a img { width: clamp(26px, 4vw, 30px); }
+}
 
-    .footer-izquierda {
-        max-width: clamp(280px, 30vw, 350px);
+/* Tablets 13-14" y notebooks pequeños (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 25vw, 280px), 1fr));
+        gap: clamp(1.5rem, 2.5vw, 2rem);
     }
+    .footer-izquierda { max-width: clamp(250px, 30vw, 320px); }
+    .footer-enlaces { max-width: clamp(150px, 20vw, 200px); font-size: clamp(0.8rem, 1.5vw, 0.9rem); }
+    .footer-derecha { max-width: clamp(250px, 30vw, 320px); }
+    .footer-derecha form { max-width: clamp(200px, 40vw, 280px); }
+    .footer-izquierda img { width: clamp(90px, 15vw, 110px); }
+    .footer-social-icons a img { width: clamp(24px, 4vw, 28px); }
 
-    .footer-enlaces {
-        max-width: clamp(180px, 20vw, 220px);
-        font-size: clamp(0.9rem, 1.5vw, 1rem);
+    /* Ajuste específico notebooks 1366x768 */
+    @media (max-width: 1366px) {
+        .footer-content {
+            grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 22vw, 250px), 1fr));
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+        .footer-izquierda,
+        .footer-derecha { max-width: clamp(200px, 28vw, 280px); }
+        .footer-derecha form { max-width: clamp(180px, 35vw, 250px); }
+        .footer-izquierda img { width: clamp(80px, 15vw, 100px); }
     }
+}
 
-    .footer-derecha {
-        max-width: clamp(280px, 30vw, 350px);
+/* Tablets medianas (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 280px), 1fr));
+        gap: clamp(1rem, 2.5vw, 1.5rem);
     }
-
+    .footer-izquierda { max-width: clamp(220px, 35vw, 300px); }
+    .footer-enlaces { max-width: clamp(140px, 25vw, 180px); font-size: clamp(0.8rem, 1.5vw, 0.9rem); }
+    .footer-derecha { max-width: clamp(220px, 35vw, 300px); }
     .footer-derecha form {
-        max-width: clamp(220px, 40vw, 300px);
+        max-width: clamp(200px, 45vw, 280px);
+        flex-direction: row;
+        gap: clamp(6px, 1.5vw, 8px);
     }
+    .footer-derecha input[type="email"], .footer-derecha button {
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    }
+    .footer-izquierda img { width: clamp(80px, 18vw, 100px); }
+    .footer-social-icons a img { width: clamp(22px, 4.5vw, 26px); }
+}
 
-    .footer-izquierda img {
-        width: clamp(100px, 15vw, 120px);
+/* Tablets pequeñas (600px - 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 25vw, 250px), 1fr));
+        gap: clamp(1rem, 2.5vw, 1.5rem);
     }
-
-    .footer-social-icons a img {
-        width: clamp(26px, 4vw, 30px);
+    .footer-izquierda { max-width: clamp(200px, 35vw, 300px); }
+    .footer-enlaces { max-width: clamp(120px, 20vw, 180px); font-size: clamp(0.8rem, 1.5vw, 0.9rem); }
+    .footer-derecha { max-width: clamp(200px, 35vw, 300px); }
+    .footer-derecha form { flex-direction: column; max-width: clamp(180px, 45vw, 250px); }
+    .footer-derecha input[type="email"], .footer-derecha button {
+        width: 100%; border-radius: 25px;
     }
+    .footer-izquierda img { width: clamp(80px, 18vw, 100px); }
+    .footer-social-icons a img { width: clamp(22px, 4.5vw, 26px); }
 }
 
 /* Pantallas medianas y pequeñas (<768px) */
@@ -342,152 +227,42 @@ footer {
         align-items: center;
         text-align: center;
     }
-
-    .footer-izquierda,
-    .footer-enlaces,
-    .footer-derecha {
+    .footer-izquierda, .footer-enlaces, .footer-derecha {
         max-width: 100%;
         align-items: center;
         text-align: center;
     }
-
-    .footer-derecha form {
-        flex-direction: column;
-        max-width: clamp(200px, 60vw, 280px);
-    }
-
-    .footer-derecha input[type="email"],
-    .footer-derecha button {
-        width: 100%;
-        border-radius: 25px;
-    }
-
-    .footer-social-icons {
-        justify-content: center;
-    }
-
-    .footer-copy {
-        margin-top: clamp(1rem, 2vw, 1.5rem);
-    }
+    .footer-derecha form { flex-direction: column; max-width: clamp(200px, 60vw, 280px); }
+    .footer-derecha input[type="email"], .footer-derecha button { width: 100%; border-radius: 25px; }
+    .footer-social-icons { justify-content: center; }
+    .footer-copy { margin-top: clamp(1rem, 2vw, 1.5rem); }
 }
 
-/* Muy pequeños (<480px) */
+/* Celulares grandes (<480px) */
 @media (max-width: 480px) {
-    footer {
-        padding: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem);
-    }
-
-    .footer-content {
-        gap: clamp(0.8rem, 2vw, 1rem);
-    }
-
-    .footer-copy,
-    .footer-enlaces a,
-    .footer-derecha h4,
-    .footer-derecha input[type="email"],
-    .footer-derecha button,
-    .scroll-to-top {
+    footer { padding: clamp(1rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); }
+    .footer-content { gap: clamp(0.8rem, 2vw, 1rem); }
+    .footer-copy, .footer-enlaces a, .footer-derecha h4,
+    .footer-derecha input[type="email"], .footer-derecha button, .scroll-to-top {
         font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     }
-
-    .footer-izquierda img {
-        width: clamp(70px, 20vw, 90px);
-    }
-
-    .footer-social-icons a img {
-        width: clamp(20px, 5vw, 24px);
-    }
+    .footer-izquierda img { width: clamp(70px, 20vw, 90px); }
+    .footer-social-icons a img { width: clamp(20px, 5vw, 24px); }
 }
 
 /* Muy pequeños (<360px) */
 @media (max-width: 360px) {
-    .footer-content {
-        gap: clamp(0.5rem, 1.5vw, 0.8rem);
-    }
-
-    footer {
-        padding: clamp(0.8rem, 1.5vw, 1rem) clamp(0.3rem, 1vw, 0.5rem);
-    }
-
-    .footer-izquierda,
-    .footer-derecha {
-        max-width: 100%;
-    }
-
-    .footer-social-icons a img {
-        width: clamp(18px, 5vw, 22px);
-    }
+    footer { padding: clamp(0.8rem, 1.5vw, 1rem) clamp(0.3rem, 1vw, 0.5rem); }
+    .footer-content { gap: clamp(0.5rem, 1.5vw, 0.8rem); }
+    .footer-social-icons a img { width: clamp(18px, 5vw, 22px); }
 }
 
-/* AJUSTE: Alta densidad de píxeles (Retina, etc.) */
+/* Retina / HiDPI */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .footer-izquierda img,
-    .footer-social-icons a img {
+    .footer-izquierda img, .footer-social-icons a img {
         image-rendering: -webkit-optimize-contrast;
     }
 }
 /* ===============================
    FIN FOOTER
 =============================== */
-
-/* ===============================
-   SweetAlert2 - Personalización
-   (Colores combinados con el footer)
-=============================== */
-.swal2-popup {
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 12px;
-    padding: 1.5rem;
-}
-
-.swal2-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #5a3030; /* Bordó del footer */
-}
-
-.swal2-html-container {
-    font-size: 0.95rem;
-    color: #333;
-}
-
-/* Botones */
-.swal2-styled.swal2-confirm {
-    background-color: #c1916b !important; /* Beige del footer */
-    border-radius: 6px !important;
-    padding: 0.6rem 1.2rem !important;
-    font-size: 0.9rem !important;
-    font-weight: 600 !important;
-    transition: background-color 0.3s ease;
-}
-
-.swal2-styled.swal2-confirm:hover {
-    background-color: #a5744c !important;
-}
-
-.swal2-styled.swal2-cancel {
-    background-color: #777 !important;
-    border-radius: 6px !important;
-    padding: 0.6rem 1.2rem !important;
-    font-size: 0.9rem !important;
-}
-
-.swal2-styled.swal2-cancel:hover {
-    background-color: #555 !important;
-}
-
-/* Iconos */
-.swal2-icon.swal2-success {
-    border-color: #4CAF50 !important;
-    color: #4CAF50 !important;
-}
-
-.swal2-icon.swal2-error {
-    border-color: #ff5252 !important;
-    color: #ff5252 !important;
-}
-
-.swal2-icon.swal2-info {
-    border-color: #5a3030 !important;
-    color: #5a3030 !important;
-}

@@ -84,8 +84,6 @@
     <link rel="stylesheet" href="/css/cls-fix.css">
 </head>
 
-
-
 <body>
     <div class="welcome-screen hidden" id="welcomeScreen">
         <div class="welcome-content">
@@ -120,7 +118,7 @@
     <header id="top">
         <nav class="navbar navbar-expand-lg navbar-custom">
             <div class="container-fluid">
-                <img src="https://i.postimg.cc/sgjP6XHr/logo-navbar.webp" alt="Logo oficial de La Clave Fitness Club"
+                <img src="https://i.postimg.cc/SKkFj6Gp/laclave-icono.png" alt="Logo oficial de La Clave Fitness Club"
                     width="150" height="130" class="d-inline-block align-text-top">
                 <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -153,50 +151,40 @@
             </div>
         </hero>
         <section class="second">
-            <div class="second-overlay">
-                <div class="second-content">
-                    <h2 class="second-title">FIT<span>ZONE</span></h2>
-                    <div class="workouts-container">
-                        <a href="./pages/fitzone.html#move-tone" class="workout-card">
-                            <div class="workout-card">
-                                <img src="https://i.postimg.cc/ydrz2wn6/index-move-tone.webp"
-                                    alt="Clase de Move & Tone en La Clave Fitness Club" loading="lazy">
-                                <div class="overlay-text">MOVE & TONE</div>
-                            </div>
-                        </a>
-                        <a href="./pages/fitzone.html#vital-stretch" class="workout-card">
-                            <div class="workout-card">
-                                <img src="https://i.postimg.cc/L56nVK5H/index-vital-stretch.webp"
-                                    alt="Entrenamiento de Vital Stretch en La Clave Fitness Club" loading="lazy">
-                                <div class="overlay-text">VITAL STRETCH</div>
-                            </div>
-                        </a>
-                        <a href="./pages/fitzone.html#jump-hiit" class="workout-card">
-                            <div class="workout-card">
-                                <img src="https://i.postimg.cc/bJPGs2jS/index-jump-hiit.webp"
-                                    alt="Entrenamiento Jump Hiit en La Clave Fitness Club" loading="lazy">
-                                <div class="overlay-text">JUMP HIIT</div>
-                            </div>
-                        </a>
-                        <a href="./pages/fitstudio.html#hero-content" class="workout-card">
-                            <div class="workout-card">
-                                <img src="https://i.postimg.cc/MZDBftH6/index-bootcamp.webp"
-                                    alt="Bootcamp intensivo en La Clave Fitness Club" loading="lazy">
-                                <div class="overlay-text">FIT STUDIO</div>
-                            </div>
-                        </a>
+            <section class="second-fest-container">
+                <!-- Primera tarjeta -->
+                <div class="second-fest">
+                    <div class="second-overlay">
+                        <div class="second-content">
+                            <h2 class="second-title">FIT<span>ZONE</span></h2>
+                            <p class="second-subtitle">Entrena al límite sin límites.</p>
+                            <a href="./pages/fitzone.html" class="second-btn">Quiero info</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="second-fest">
-            <div class="second-overlay">
-                <div class="second-content">
-                    <h2 class="second-title">FIT<span>FEST</span></h2>
-                    <p class="second-subtitle">Viví la experiencia del entrenamiento como una fiesta.</p>
-                    <a href="./pages/fitfest.html" class="second-btn">Quiero info</a>
+
+                <!-- Segunda tarjeta -->
+                <div class="second-fest">
+                    <div class="second-overlay">
+                        <div class="second-content">
+                            <h2 class="second-title">FIT<span>FEST</span></h2>
+                            <p class="second-subtitle">Viví la experiencia del entrenamiento como una fiesta.</p>
+                            <a href="./pages/fitfest.html" class="second-btn">Quiero info</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <!-- Tercera tarjeta -->
+                <div class="second-fest">
+                    <div class="second-overlay">
+                        <div class="second-content">
+                            <h2 class="second-title">FIT<span>STUDIO</span></h2>
+                            <p class="second-subtitle">Preparate para ser el alma del etrenamiento.</p>
+                            <a href="./pages/fitstudio.html" class="second-btn">Quiero info</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
         <section class="feature-section">
             <!-- 1) Tienda -->
@@ -206,15 +194,15 @@
                     Encontra todo lo que necesitas para tu entrenamiento y bienestar.
                     Equipamiento y clases, todo en un solo lugar.
                 </p>
-                </div>
-                <!-- 2) Contacto -->
-                <a href="./pages/contacto.html" class="feature" data-hover="Contáctanos">
-                    <h3>Contact</h3>
-                    <p>
-                        Si tienes alguna pregunta o necesitas más información, no dudes en
-                        ponerte en contacto con nosotros. Estamos aquí para ayudarte.
-                    </p>
-                </a>
+            </a>
+            <!-- 2) Contacto -->
+            <a href="./pages/contacto.html" class="feature" data-hover="Contáctanos">
+                <h3>Contact</h3>
+                <p>
+                    Si precisas necesitas más información, no dudes en
+                    ponerte en contacto con nosotros. Estamos aquí para ayudarte.
+                </p>
+            </a>
         </section>
     </main>
     <footer class="footer">
@@ -256,7 +244,7 @@
                             aria-label="Correo electrónico">
                         <input type="hidden" name="_subject" value="Nueva suscripción al newsletter">
                         <button type="submit">Enviar</button>
-                    
+
                     </form><br>
                     <div class="footer-social-icons">
                         <a href="#" id="whatsapp-link" target="_blank"><img
