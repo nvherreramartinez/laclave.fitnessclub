@@ -26,6 +26,7 @@ admin-panel
 .firebase/
 firebase.js 
 firebase-panel.js
+firebase.json
 
 # Windows
 desktop.ini

@@ -9,24 +9,11 @@ export const events = [
         categoriaIcon: "https://i.postimg.cc/Y0yZNJkS/icono-kangoo.png",
         hora: "19:30",
         titulo: "Jumping",
-        gimnasio: "EnergyM",
+        gimnasio: "Energym",
         barrio: "Colonia Tirolesa",
         provincia: "Córdoba"
     },
-    {
-        clase: "jumping",
-        link: "https://wa.me/5491112345678?text=Hola,%20quiero%20más%20info%20del%20evento",
-        mes: "OCT",
-        dia: "4",
-        fecha: "SAB",
-        categoriaIcon: "https://i.postimg.cc/Y0yZNJkS/icono-kangoo.png",
-        hora: "10:30",
-        titulo: "Jumping",
-        gimnasio: "Actitud Centro",
-        barrio: "Jesús María",
-        provincia: "Córdoba"
-    },
-    {
+        {
         clase: "jumping",
         link: "https://wa.me/5491112345678?text=Hola,%20quiero%20más%20info%20del%20evento",
         mes: "OCT",
@@ -51,5 +38,18 @@ export const events = [
         gimnasio: "Centro Coyoacan",
         barrio: "CDMX",
         provincia: "México"
+    },
+    {
+        clase: "jumping",
+        link: "https://wa.me/5491112345678?text=Hola,%20quiero%20más%20info%20del%20evento",
+        mes: "NOV",
+        dia: "8",
+        fecha: "SAB",
+        categoriaIcon: "https://i.postimg.cc/Y0yZNJkS/icono-kangoo.png",
+        hora: "16:30",
+        titulo: "Jumping",
+        gimnasio: "Actitud Centro",
+        barrio: "Colonia Caroya",
+        provincia: "Córdoba"
     }
 ];

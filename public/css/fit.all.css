@@ -1105,6 +1105,13 @@ p span {
         font-size: clamp(0.9rem, 3vw, 1.2rem);
     }
 
+    /* Ajuste específico para pantallas 400px a 480px */
+    @media (min-width: 400px) and (max-width: 480px) {
+        .contenido h3 {
+            font-size: 1.15rem; /* evita desbordamiento */
+        }
+    }
+
     .contenido p {
         font-size: clamp(0.65rem, 2vw, 0.8rem);
     }

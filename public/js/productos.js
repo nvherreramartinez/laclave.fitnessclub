@@ -55,20 +55,20 @@ export const productos = [
         price: "Consultar",
         imagen: "https://i.postimg.cc/W1dLHg7h/tienda-stretching.avif",
     },
-    {
-        id: 6,
-        tittle: "Pilates",
-        category: "VITAL STRETCH",
-        categoryIcon: "https://i.postimg.cc/Cx8XQtCy/icono-stretching.webp",
-        description: "Ejercicios de bajo impacto que fortalecen el core y mejoran la postura.",
-        presentation: {
-            presencial: true,
-            online: false
-        },
-        stock: "Consultar cupos",
-        price: "Consultar",
-        imagen: "https://i.postimg.cc/JhjFfqH4/tienda-pilates.avif"
-    },
+    //{
+    //   id: 6,
+    //    tittle: "Pilates",
+    //    category: "VITAL STRETCH",
+    //    categoryIcon: "https://i.postimg.cc/Cx8XQtCy/icono-stretching.webp",
+    //    description: "Ejercicios de bajo impacto que fortalecen el core y mejoran la postura.",
+    //    presentation: {
+    //        presencial: true,
+    //        online: false
+    //    },
+    //    stock: "Consultar cupos",
+    //    price: "Consultar",
+     //   imagen: "https://i.postimg.cc/JhjFfqH4/tienda-pilates.avif"
+    //}
     {
         id: 7,
         tittle: "Botas de Rebote",

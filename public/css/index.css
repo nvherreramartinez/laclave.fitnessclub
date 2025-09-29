@@ -270,7 +270,9 @@ video {
     max-width: 1200px;
 }
 
-/* Cada tarjeta */
+/* ===============================
+   SECOND SECTION - Tarjetas
+=============================== */
 .second-fest {
     display: flex;
     align-items: center;
@@ -278,7 +280,7 @@ video {
     min-height: 400px;
     padding: 20px;
     background: linear-gradient(rgba(255, 255, 255, 0.241), rgba(255, 255, 255, 0.19)),
-        url("https://i.postimg.cc/6q59DYLs/index-final-2.png") center/cover no-repeat fixed;
+        url("https://i.postimg.cc/6q59DYLs/index-final-2.png") right center / cover no-repeat fixed;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 15px;
@@ -337,7 +339,7 @@ video {
    FEATURE SECTION
 =============================== */
 .feature-section {
-    background: url("https://i.postimg.cc/6q59DYLs/index-final-2.png") center/cover no-repeat fixed;
+    background: url("https://i.postimg.cc/6q59DYLs/index-final-2.png") right center / cover no-repeat fixed;
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -345,6 +347,7 @@ video {
     align-items: center;
     padding: 8vh clamp(1rem, 4vw, 4rem);
 }
+
 
 .feature {
     border-top: 2px solid rgba(255, 255, 255, .4);
@@ -548,8 +551,15 @@ h2 {
    Breakpoints menores (mobile first)
 ============================== */
 
-/* <= 992px */
+/* ==============================
+   <= 992px (Tablets grandes / Desktop mediano)
+============================== */
 @media (max-width: 992px) {
+    .second-fest {
+        background-position: right center;
+        /* todavía en desktop grande */
+    }
+
     .second-title {
         font-size: 2.5rem;
         letter-spacing: 2.5px;
@@ -578,71 +588,63 @@ h2 {
         text-align: center;
         width: 100%;
     }
+    .feature-section {
+        background-position: right center;
+    }
 }
 
-/* <= 820px */
+/* ==============================
+   <= 820px (Hero-title ajuste)
+============================== */
 @media (max-width: 820px) {
     .hero-title {
         font-size: 2.2rem;
-        /* ✅ fijo en rem para no cortar en 2 líneas */
-
     }
 }
 
-/* <= 768px */
+/* ==============================
+   <= 768px (Welcome content apilado)
+============================== */
 @media (max-width: 768px) {
     .welcome-content {
         display: flex;
-        flex-direction: column;   /* 👉 apila logo y botón */
-        align-items: center;      /* 👉 centra horizontalmente */
-        justify-content: center;  /* 👉 centra verticalmente */
-        gap: 1rem;                /* 👉 espacio entre logo y botón */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .welcome-logo {
-        width: 180px; /* más chico que desktop */
+        width: 180px;
     }
 
     .welcome-content #enterButton {
         padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
-        width: auto; /* 👉 solo lo necesario */
-        margin: 0 auto; /* 👉 asegura que quede centrado */
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .second-fest {
+        background-position: center center;
+        /* centramos la persona en tablets y móviles medianos */
     }
 
     .second-title {
         font-size: 2rem;
         letter-spacing: 2px;
     }
-}
-
-
-/* <= 699px */
-@media (max-width: 699px) {
     .feature-section {
-        padding: 4vh 1rem;
-    }
-
-    .feature {
-        padding-top: 1.25rem;
-    }
-
-    .cookie-banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-    }
-
-    .cookie-banner p {
-        max-width: 100%;
+        background-position: center center;
     }
 }
 
-/* <= 576px */
+/* ==============================
+   <= 576px (Móviles pequeños)
+============================== */
 @media (max-width: 576px) {
     .hero-title {
         font-size: 2rem;
-        /* ✅ rem directo para móviles chicos */
     }
 
     .second-fest-container {
@@ -681,51 +683,88 @@ h2 {
     }
 }
 
-/* <= 400px */
-@media (max-width: 400px) {
-    .hero-title {
+/* ==============================
+   <= 500px (Hero-title y second-title ajuste intermedio)
+============================== */
+@media (max-width: 500px) and (min-width: 441px) {
+    /* Hero-title dentro de feature-section */
+    .feature-section .hero-title {
         font-size: 1.8rem;
-        /* ✅ más chico aún */
     }
 
-    .welcome-logo {
-        width: 150px; /* más chico en móviles muy chicos */
+    /* second-title */
+    .second-title {
+        font-size: 1.65rem;
+        letter-spacing: 1.5px;
+        padding: 0 5px;
     }
 
-    .welcome-content #enterButton {
-        width: 100%;   /* 👉 ocupa todo el ancho disponible */
-        padding: 0.6rem 1rem;
+    .second-subtitle {
         font-size: 0.85rem;
     }
 
-    .second-title {
-        font-size: 1.8rem;
-        letter-spacing: 1.5px;
+    .second-btn {
+        padding: 0.55rem 1rem;
+        font-size: 0.85rem;
     }
 }
 
-/* <= 375px */
-@media (max-width: 375px) {
-    .hero-title {
-        font-size: 1.6rem;
-    }
-
-    .feature h3 {
-        font-size: 1.5rem;
-    }
-
-    .feature p {
-        font-size: 0.9rem;
+/* ==============================
+   440px - 400px
+============================== */
+@media (max-width: 440px) and (min-width: 401px) {
+    .feature-section .hero-title {
+        font-size: 1.65rem;
     }
 
     .second-title {
         font-size: 1.5rem;
+        letter-spacing: 1.2px;
+        padding: 0 5px;
+    }
+
+    .second-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .second-btn {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==============================
+   400px - 361px
+============================== */
+@media (max-width: 400px) and (min-width: 361px) {
+    .feature-section .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .second-title {
+        font-size: 1.4rem;
         letter-spacing: 1px;
+        padding: 0 5px;
+    }
+
+    .second-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .second-btn {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
-/* <= 360px */
+/* ==============================
+   <= 360px (Extremos como Samsung S9)
+============================== */
 @media (max-width: 360px) {
+    .feature-section .hero-title {
+        font-size: 1.4rem;
+    }
+
     .welcome-logo {
         width: clamp(120px, 40vw, 140px);
     }
@@ -747,18 +786,21 @@ h2 {
         max-width: 100%;
     }
 
-    .hero-title {
-        font-size: 1.4rem;
-    }
-
     .second-title {
         font-size: 1rem;
         letter-spacing: 0.5px;
         padding: 0 5px;
     }
+
+    .second-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .second-btn {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.75rem;
+    }
 }
-
-
 /* AJUSTE: Alta densidad de píxeles (Retina, etc.) */
 @media (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
