@@ -43,6 +43,30 @@
     flex-direction: row-reverse;
 }
 
+.titulo-icono {
+    display: flex;
+    align-items: center;
+    /* alinea verticalmente h3 e icono */
+    gap: 10px;
+    /* espacio entre ellos */
+    margin-bottom: 15px;
+    /* separa del párrafo siguiente */
+}
+
+.titulo-icono h3 {
+    margin: 0;
+    /* elimina margen extra del h3 */
+    color: #f2d28b;
+    font-size: clamp(1.3rem, 4vw, 2rem);
+}
+
+.titulo-icono .icono-blanco {
+    filter: invert(100%);
+    height: 50px;
+    /* ajustá según tu diseño */
+    width: auto;
+}
+
 .contenido {
     flex: 1;
     min-width: 250px;
@@ -58,8 +82,8 @@
 
 /* ✅ Texto más corto y limpio */
 .contenido p {
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
-    line-height: 1.5;
+    font-size: clamp(0.9rem, 2.3vw, 1rem);
+    line-height: 1.6;
     margin-bottom: 0.8rem;
 }
 
@@ -83,23 +107,25 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     margin: 0 auto;
     padding: 1rem;
+    aspect-ratio: 9 / 11;
 }
 
 .imagen img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 🔹 llena el contenedor sin distorsión */
+    position: relative;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
     transition: transform 0.3s ease;
 }
 
 .imagen img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* ===============================
@@ -115,8 +141,8 @@
 
 .modalidades h3 {
     color: #f2d28b;
-    font-weight: 400;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
@@ -234,31 +260,61 @@
    PANTALLA FIT FEST
 =============================== */
 
+/* ===========================
+   DESKTOP (grid normal)
+=========================== */
+
 .fitness-fest-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.5rem;
-    padding: 1rem;
-    max-width: 1200px;
+    display: flex;
+    width: 900px;
+    /* 🔹 más ancho general */
+    height: 420px;
+    /* 🔹 más alto base */
     margin: 0 auto;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
 }
 
 .card {
-    width: 100%;
+    flex: 1.2;
+    /* 🔹 un poco más grandes por defecto */
     height: 100%;
     overflow: hidden;
+    border-radius: 1rem;
+    transition: all 0.6s ease;
+    cursor: pointer;
+    position: relative;
 }
 
 .card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.6s ease, height 0.6s ease;
 }
 
-.card:hover {
-    transform: scale(1.10);
-    flex: 20;
+/* 🔸 Al pasar el mouse sobre el contenedor, todas se achican */
+.fitness-fest-container:hover .card {
+    flex: 0.7;
+    filter: brightness(0.5);
+}
+
+/* 🔸 Pero la tarjeta activa se agranda tanto en ancho como en alto */
+.fitness-fest-container .card:hover {
+    flex: 3;
+    /* 🔹 se expande más */
+    height: 480px;
+    /* 🔹 aumenta la altura */
+    z-index: 3;
+    filter: brightness(1);
+    transform: translateY(-20px);
+    /* 🔹 pequeño efecto de elevación */
+}
+
+/* 🔸 Imagen dentro de la tarjeta activa */
+.fitness-fest-container .card:hover img {
+    transform: scale(1.1);
 }
 
 .pasos-container {
@@ -332,31 +388,32 @@ p span {
 }
 
 /*------ Calendario de Eventos ------*/
-/* === Contenedor general === */
-
+/* --- Contenedor general --- */
 .event-container {
     display: flex;
     justify-content: center;
     margin: 50px 0 0 0;
-    padding: 30px;
+    padding: clamp(15px, 2vw, 30px);
     background-image: url('https://i.postimg.cc/rsn03DC1/event-final-16-9-1.png');
-    object-fit: contain;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    object-fit: contain;
 }
 
+/* --- Lista de eventos --- */
 .event-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(8px, 1.5vw, 20px);
     width: 100%;
-    max-width: 800px;
+    max-width: clamp(700px, 60vw, 1000px);
 }
 
-/* === Cada evento === */
+/* --- Cada evento --- */
 .event {
     display: flex;
+    /* mantiene estructura en fila (3 columnas visuales) */
     align-items: center;
     text-decoration: none;
     color: #fff;
@@ -373,98 +430,142 @@ p span {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* === Bloque de fecha estilo inclinado === */
+/* --- Fecha estilo inclinado --- */
 .date {
     background: linear-gradient(135deg, #0077b6, #00b4d8);
-    ;
-    /* azul */
     color: #fff;
-    padding: 15px 20px;
+    padding: clamp(10px, 1.5vw, 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
     font-weight: bold;
     position: relative;
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
-    min-width: 120px;
+    min-width: clamp(100px, 10vw, 140px);
 }
 
 .date .mes {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
     letter-spacing: 2px;
 }
 
 .date .dia {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 2vw, 2rem);
     line-height: 1;
 }
 
 .date .fecha {
-    font-size: 0.8rem;
+    font-size: clamp(0.65rem, 0.8vw, 0.8rem);
 }
 
-/* === Icono de categoría === */
+/* --- Icono --- */
 .icono {
     padding: 10px 15px;
     filter: invert(100%);
 }
 
 .icono img {
-    width: 50px;
-    height: 50px;
+    width: clamp(30px, 3vw, 50px);
+    height: clamp(30px, 3vw, 50px);
     object-fit: contain;
 }
 
 
-/* === Detalles del evento === */
-
+/* --- Detalles del evento --- */
 .details {
     flex: 1;
     padding: 15px;
 }
 
 .details .hora {
-    font-size: 0.9rem;
-
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
     font-weight: bold;
     margin: 0;
 }
 
 .details .titulo {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
     margin: 5px 0;
-
 }
 
 .details p {
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
     margin: 2px 0;
-    font-size: 0.9rem;
 }
 
-/* Colores automáticos por orden */
+/* --- Colores automáticos por orden --- */
 .event-list .event:nth-child(5n+1) .date {
     background: linear-gradient(135deg, #0077b6, #00b4d8);
-    /* azul */
 }
 
 .event-list .event:nth-child(5n+2) .date {
     background: linear-gradient(135deg, #76b947, #a3de83);
-    /* verde */
 }
 
 .event-list .event:nth-child(5n+3) .date {
     background: linear-gradient(135deg, #f5af19, #f12711);
-    /* naranja */
 }
 
 .event-list .event:nth-child(5n+4) .date {
     background: linear-gradient(135deg, #ff512f, #dd2476);
-    /* rojo-rosa */
 }
 
 .event-list .event:nth-child(5n+5) .date {
     background: linear-gradient(135deg, #7b2ff7, #f107a3);
-    /* violeta */
+}
+
+/* ===============================
+   AJUSTE RESPONSIVE — CALENDARIO DE EVENTOS
+   Natalia Herrera · Octubre 2025
+=============================== */
+
+/* Escalado progresivo general */
+.event-container {
+    padding: clamp(15px, 2vw, 30px);
+    background-size: cover;
+}
+
+/* Fluidez de anchos */
+.event-list {
+    max-width: clamp(700px, 60vw, 1000px);
+    gap: clamp(10px, 2vw, 20px);
+}
+
+/* Tamaños fluidos */
+.date {
+    min-width: clamp(100px, 10vw, 140px);
+    padding: clamp(10px, 1.5vw, 20px);
+}
+
+.date .mes {
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.date .dia {
+    font-size: clamp(1.3rem, 2vw, 2rem);
+}
+
+.date .fecha {
+    font-size: clamp(0.65rem, 0.8vw, 0.8rem);
+}
+
+/* Íconos */
+.icono img {
+    width: clamp(50px, 3vw, 70px);
+    height: clamp(50px, 3vw, 70px);
+}
+
+/* Detalles del evento */
+.details .hora {
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
+}
+
+.details .titulo {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+}
+
+.details p {
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
 }
 
 /* ===============================
@@ -518,7 +619,7 @@ p span {
 
 /* Subtítulo */
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1.3rem, 4vw, 2rem);
     margin: 1rem 0 2rem;
     color: #f2d28b;
 }
@@ -553,6 +654,7 @@ p span {
 }
 
 .info-section p {
+    font-size: clamp(0.9rem, 2.3vw, 1rem);
     max-width: 700px;
     margin: auto;
     color: #b4a6a6;
@@ -585,10 +687,6 @@ p span {
         /* Ligeramente más grande para laptops */
     }
 
-    .contenido p {
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
-    }
-
     .imagen img {
         max-width: 85%;
         /* Evitar que las imágenes sean demasiado grandes */
@@ -604,42 +702,22 @@ p span {
         max-width: 400px;
     }
 
-    .fitness-fest-container {
-        height: auto;
-        /* Eliminar altura fija para escalado dinámico */
-        max-width: 1200px;
-        /* Limitar ancho para laptops */
-        gap: 0.5rem;
-    }
-
-    .card {
-        flex: 1 1 200px;
-        /* Asegurar que las tarjetas escalen correctamente */
-    }
-
-    .card:hover {
-        flex: 1.5;
-        /* Reducir expansión en hover para mejor control */
-        transform: scale(1.05);
-        /* Escala sutil para dispositivos táctiles */
-    }
-
     .hero-title {
         font-size: clamp(3rem, 5vw, 3.5rem);
         /* Ajustar para pantallas de laptops */
     }
 
-    .hero-subtitle {
-        font-size: clamp(1rem, 2vw, 1.3rem);
-    }
-
     .event-container {
-        padding: 25px;
+        padding: clamp(20px, 2vw, 30px);
     }
 
     .event-list {
-        max-width: 900px;
-        /* Optimizar para ancho de laptops */
+        max-width: 850px;
+        gap: clamp(12px, 1.5vw, 20px);
+    }
+
+    .date {
+        min-width: 130px;
     }
 
     .slider-contenedor {
@@ -647,6 +725,7 @@ p span {
         /* Ligeramente más grande para laptops */
     }
 }
+
 
 /* Tablets (13/14 pulgadas, 1024px a 1366px) */
 @media (max-width: 1366px) {
@@ -675,10 +754,6 @@ p span {
         font-size: clamp(1.3rem, 3vw, 1.7rem);
     }
 
-    .contenido p {
-        font-size: clamp(0.85rem, 2vw, 1rem);
-    }
-
     .imagen img {
         max-width: 90%;
     }
@@ -686,31 +761,13 @@ p span {
     .tarjetas {
         flex-wrap: wrap;
         justify-content: space-around;
-        gap: 1.5rem;
+        gap: 1.3rem;
     }
 
     .tarjeta {
         width: 48%;
         /* Dos tarjetas por fila para tablets grandes */
         max-width: 380px;
-    }
-
-    .fitness-fest-container {
-        flex-direction: row;
-        /* Mantener fila para tablets grandes */
-        height: auto;
-        max-width: 1000px;
-        gap: 0.5rem;
-    }
-
-    .card {
-        flex: 1 1 180px;
-    }
-
-    .card:hover {
-        flex: 1.3;
-        /* Menos expansión para táctiles */
-        transform: scale(1.05);
     }
 
     .hero {
@@ -720,10 +777,6 @@ p span {
 
     .hero-title {
         font-size: clamp(2.5rem, 4vw, 3rem);
-    }
-
-    .hero-subtitle {
-        font-size: clamp(0.9rem, 2vw, 1.2rem);
     }
 
     .hero-btn {
@@ -768,10 +821,6 @@ p span {
         font-size: clamp(1.2rem, 3vw, 1.6rem);
     }
 
-    .contenido p {
-        font-size: clamp(0.8rem, 2vw, 0.95rem);
-    }
-
     .imagen img {
         max-width: 80%;
     }
@@ -787,24 +836,6 @@ p span {
         max-width: 360px;
     }
 
-    .fitness-fest-container {
-        flex-direction: column;
-        /* Apilar tarjetas para tablets pequeñas */
-        height: auto;
-        max-width: 800px;
-        padding: 1rem;
-    }
-
-    .card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .card:hover {
-        transform: scale(1.03);
-        /* Escala sutil para táctiles */
-    }
-
     .hero {
         height: 70vh;
         /* Reducir altura */
@@ -814,10 +845,6 @@ p span {
         font-size: clamp(2rem, 4vw, 2.5rem);
     }
 
-    .hero-subtitle {
-        font-size: clamp(0.85rem, 2vw, 1.1rem);
-    }
-
     .hero-btn {
         padding: 0.6rem 1.2rem;
         font-size: clamp(0.85rem, 2vw, 0.95rem);
@@ -825,11 +852,6 @@ p span {
 
     .info-section h2 {
         font-size: clamp(1.5rem, 3vw, 1.8rem);
-    }
-
-    .info-section p {
-        font-size: clamp(0.85rem, 2vw, 1rem);
-        max-width: 90%;
     }
 
     .event-container {
@@ -842,6 +864,122 @@ p span {
 
     .slider-contenedor {
         max-width: 400px;
+    }
+}
+
+/* 🔸 Efecto “acordeón” sólo para pantallas grandes */
+@media (min-width: 991px) {
+    .fitness-fest-container:hover .card {
+        flex: 0.7;
+        filter: brightness(0.5);
+    }
+
+    .fitness-fest-container .card:hover {
+        flex: 3;
+        height: 480px;
+        z-index: 3;
+        filter: brightness(1);
+        transform: translateY(-20px);
+    }
+
+    .fitness-fest-container .card:hover img {
+        transform: scale(1.1);
+    }
+}
+
+/* =============================== */
+/* 🔹 Tablets: 990px a 601px */
+/* — Sin agrandar, solo brillo */
+/* =============================== */
+@media (max-width: 990px) and (min-width: 601px) {
+    .fitness-fest-container {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.75rem;
+        width: 90%;
+        max-width: 700px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* 💥 Fuerza a que no haya comportamiento flex heredado */
+    .fitness-fest-container:hover .card,
+    .fitness-fest-container .card:hover {
+        flex: none !important;
+        height: 240px !important;
+        transform: none !important;
+        z-index: auto !important;
+        filter: brightness(1) !important;
+    }
+
+    .card {
+        flex: none !important;
+        width: 100%;
+        height: 240px;
+        border-radius: 1rem;
+        transition: filter 0.3s ease;
+        overflow: hidden;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+    }
+
+    /* ✨ Solo brillo */
+    .card:hover {
+        filter: brightness(1.15) !important;
+    }
+}
+
+/* Mejor escala en tablets medianas */
+@media (max-width: 900px) {
+    .event-container {
+        padding: clamp(15px, 2vw, 25px);
+    }
+
+    .event-list {
+        max-width: 700px;
+        gap: clamp(8px, 1.5vw, 15px);
+    }
+
+    .date {
+        min-width: clamp(100px, 10vw, 140px);
+        padding: clamp(10px, 1.5vw, 20px);
+    }
+
+    .date .mes {
+        font-size: clamp(0.8rem, 1vw, 1rem);
+    }
+
+    .date .dia {
+        font-size: clamp(1.3rem, 2vw, 2rem);
+    }
+
+    .date .fecha {
+        font-size: clamp(0.65rem, 0.8vw, 0.8rem);
+    }
+
+    .icono img {
+        width: clamp(40px, 3vw, 60px);
+        height: clamp(40px, 3vw, 60px);
+    }
+
+    .details .hora {
+        font-size: clamp(0.8rem, 0.9vw, 1rem);
+    }
+
+    .details .titulo {
+        font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+        /* más grande que antes */
+    }
+
+    .details p {
+        font-size: clamp(0.9rem, 1vw, 1rem);
+        /* texto más legible */
     }
 }
 
@@ -867,10 +1005,6 @@ p span {
         font-size: clamp(1.2rem, 5vw, 1.6rem);
     }
 
-    .contenido p {
-        font-size: clamp(0.8rem, 3vw, 0.95rem);
-    }
-
     .imagen {
         max-width: 250px;
     }
@@ -881,7 +1015,7 @@ p span {
 
     .tarjeta {
         width: 95%;
-        padding: 1.2rem;
+        padding: 1.1rem;
     }
 
     .fitness-fest-container {
@@ -891,7 +1025,7 @@ p span {
 
     .pasos-container {
         padding: 1rem;
-        gap: 1rem;
+        gap: .7rem;
     }
 
     .paso {
@@ -907,10 +1041,6 @@ p span {
         font-size: clamp(1.8rem, 4vw, 2.2rem);
     }
 
-    .hero-subtitle {
-        font-size: clamp(0.8rem, 2vw, 1rem);
-    }
-
     .hero-btn {
         padding: 0.6rem 1rem;
         font-size: clamp(0.8rem, 2vw, 0.9rem);
@@ -920,22 +1050,18 @@ p span {
         font-size: clamp(1.3rem, 3vw, 1.6rem);
     }
 
-    .info-section p {
-        font-size: clamp(0.8rem, 2vw, 0.9rem);
-    }
-
     .event-container {
         padding: 10px;
     }
 
     .event-list {
-        max-width: 600px;
-        gap: 10px;
+        max-width: 90%;
+        gap: 6px;
     }
 
     .date {
-        min-width: 90px;
-        padding: 8px 12px;
+        min-width: 75px;
+        padding: 6px 10px;
     }
 
     .date .mes {
@@ -949,19 +1075,13 @@ p span {
     .date .fecha {
         font-size: 0.65rem;
     }
-
-    .icono img {
-        width: 35px;
-        height: 35px;
-    }
-
     .details .hora,
     .details p {
         font-size: 0.75rem;
     }
 
     .details .titulo {
-        font-size: 0.95rem;
+        font-size: clamp(0.85rem, 3vw, 1rem);
     }
 
     .slider-contenedor {
@@ -983,10 +1103,6 @@ p span {
 
     .contenido h3 {
         font-size: clamp(1rem, 3vw, 1.3rem);
-    }
-
-    .contenido p {
-        font-size: clamp(0.7rem, 2vw, 0.85rem);
     }
 
     .imagen {
@@ -1012,7 +1128,7 @@ p span {
     }
 
     .pasos-container {
-        padding: 0.8rem;
+        padding: 0.6rem;
     }
 
     .hero {
@@ -1021,10 +1137,6 @@ p span {
 
     .hero-title {
         font-size: clamp(1.5rem, 4vw, 2rem);
-    }
-
-    .hero-subtitle {
-        font-size: clamp(0.75rem, 2vw, 0.9rem);
     }
 
     .hero-btn {
@@ -1036,26 +1148,21 @@ p span {
         font-size: clamp(1.2rem, 3vw, 1.5rem);
     }
 
-    .info-section p {
-        font-size: clamp(0.75rem, 2vw, 0.85rem);
-        max-width: 95%;
-    }
-
     .event-container {
         padding: 10px;
     }
 
     .event-list {
-        gap: 8px;
+        gap: 6px;
     }
 
     .date {
-        min-width: 80px;
-        padding: 8px 10px;
+        min-width: 70px;
+        padding: 5px 8px;
     }
 
     .date .mes {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     .date .dia {
@@ -1066,24 +1173,71 @@ p span {
         font-size: 0.6rem;
     }
 
-    .icono img {
-        width: 30px;
-        height: 30px;
-    }
-
     .details .hora,
     .details p {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
     }
 
     .details .titulo {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .slider-contenedor {
         max-width: 100%;
     }
+
+    .fitness-fest-container {
+        display: flex;
+        flex-direction: row;
+        /* scroll lateral */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 0.75rem;
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        /* mantiene ancho fijo por card */
+        width: 260px;
+        /* podés ajustar */
+        height: 200px;
+        /* 🔹 más bajo que antes */
+        border-radius: 1rem;
+        transition: filter 0.3s ease;
+        scroll-snap-align: start;
+        overflow: hidden;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+    }
+
+    /* 🔸 Efecto brillo leve al tocar */
+    .fitness-fest-container:hover .card,
+    .fitness-fest-container .card:hover {
+        flex: none !important;
+        transform: none !important;
+        z-index: auto !important;
+        filter: brightness(1) !important;
+    }
+
+    .card:hover {
+        filter: brightness(1.1) !important;
+    }
+
+    /* 🔹 Scroll suave opcional */
+    .fitness-fest-container::-webkit-scrollbar {
+        display: none;
+        /* ocultamos la barra para un look más limpio */
+    }
 }
+
 
 /* Móviles Pequeños (hasta 480px) */
 @media (max-width: 480px) {
@@ -1108,12 +1262,9 @@ p span {
     /* Ajuste específico para pantallas 400px a 480px */
     @media (min-width: 400px) and (max-width: 480px) {
         .contenido h3 {
-            font-size: 1.15rem; /* evita desbordamiento */
+            font-size: 1.15rem;
+            /* evita desbordamiento */
         }
-    }
-
-    .contenido p {
-        font-size: clamp(0.65rem, 2vw, 0.8rem);
     }
 
     .imagen img {
@@ -1145,10 +1296,6 @@ p span {
         font-size: clamp(1.4rem, 4vw, 1.8rem);
     }
 
-    .hero-subtitle {
-        font-size: clamp(0.7rem, 2vw, 0.85rem);
-    }
-
     .hero-btn {
         padding: 0.5rem 0.8rem;
         font-size: clamp(0.7rem, 2vw, 0.8rem);
@@ -1158,38 +1305,18 @@ p span {
         font-size: clamp(1.1rem, 3vw, 1.3rem);
     }
 
-    .info-section p {
-        font-size: clamp(0.7rem, 2vw, 0.8rem);
-    }
-
     .event-container {
         padding: 8px;
     }
 
     .event-list {
-        gap: 6px;
+        gap: 5.5px;
     }
 
     .date {
-        min-width: 70px;
-        padding: 6px 8px;
-    }
-
-    .date .mes {
-        font-size: 0.75rem;
-    }
-
-    .date .dia {
-        font-size: 1.2rem;
-    }
-
-    .date .fecha {
-        font-size: 0.55rem;
-    }
-
-    .icono img {
-        width: 25px;
-        height: 25px;
+        min-width: 65px;
+        /* antes 70px */
+        padding: 4px 6px;
     }
 
     .details .hora,
@@ -1198,7 +1325,7 @@ p span {
     }
 
     .details .titulo {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -1216,10 +1343,6 @@ p span {
 
     .contenido h3 {
         font-size: clamp(0.85rem, 3vw, 1rem);
-    }
-
-    .contenido p {
-        font-size: clamp(0.6rem, 2vw, 0.75rem);
     }
 
     .tarjeta {
@@ -1242,10 +1365,6 @@ p span {
         font-size: clamp(1.2rem, 4vw, 1.5rem);
     }
 
-    .hero-subtitle {
-        font-size: clamp(0.65rem, 2vw, 0.8rem);
-    }
-
     .hero-btn {
         padding: 0.4rem 0.7rem;
         font-size: clamp(0.65rem, 2vw, 0.75rem);
@@ -1255,16 +1374,46 @@ p span {
         font-size: clamp(1rem, 3vw, 1.2rem);
     }
 
-    .info-section p {
-        font-size: clamp(0.65rem, 2vw, 0.75rem);
-    }
-
     .event-container {
         padding: 5px;
     }
 
     .event-list {
         gap: 5px;
+    }
+
+    .date {
+        min-width: 75px;
+        padding: 6px 10px;
+    }
+
+    .date .mes {
+        font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+    }
+
+    .date .dia {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    .date .fecha {
+        font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+    }
+
+    .icono img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .details .hora {
+        font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+    }
+
+    .details .titulo {
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    }
+
+    .details p {
+        font-size: clamp(0.65rem, 2.5vw, 0.75rem);
     }
 
     .slider-contenedor {

@@ -1,0 +1,279 @@
+/* ===============================
+   FUENTES Y BODY
+=============================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-display: swap;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===============================
+   NAVBAR
+=============================== */
+.navbar-custom {
+    background-color: #000000;
+    min-height: 70px;
+    display: flex;
+}
+
+.navbar-custom .nav-link {
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+    background-color: #a5744c;
+    color: #ffffff;
+}
+
+.navbar-brand img {
+    height: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    position: relative;
+}
+.container-fluid {
+    padding: 0 15px;
+    background-color: #000000;
+}
+
+/* ===============================
+   TITULOS, SUBTITULOS Y BOTONES
+=============================== */
+
+.second-title {
+    display: block;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: clamp(1px, 0.4vw, 4px);
+    font-size: clamp(1.6rem, 4vw + 0.5rem, 3.8rem);
+    margin: 0 auto 20px;
+    color: rgb(253, 216, 53);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.second-title span {
+    color: #d4a158;
+}
+
+.second-title:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 5px #c1916b, 0 0 10px #c1916b, 0 0 20px #fdd835;
+}
+.second-subtitle {
+    font-size: 1rem;
+    margin: 1rem 0 2rem;
+    color: #b4a6a6;
+}
+
+.second-btn {
+    background: #d4a158;
+    color: #2c2023;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.second-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #e2b58f;
+}
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+
+/* ==============================
+   Desktop grandes (>1440px)
+============================== */
+@media (min-width: 1441px) {
+    .navbar-custom {
+        padding: clamp(15px, 2vw, 20px);
+    }
+}
+
+/* ==============================
+   Notebooks medianos (1025px - 1440px)
+============================== */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .navbar-custom {
+        padding: clamp(10px, 2vw, 15px);
+    }
+
+    .navbar-brand img {
+        height: clamp(30px, 4vw, 35px);
+    }
+    
+}
+
+/* ==============================
+   Tablets (600px - 1024px)
+============================== */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .navbar-custom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: clamp(10px, 2vw, 15px);
+    }
+
+    .navbar-brand img {
+        height: clamp(28px, 5vw, 32px);
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        gap: clamp(8px, 2vw, 12px);
+    }
+
+    .navbar-custom .nav-link {
+        padding: clamp(6px, 1.5vw, 8px) clamp(8px, 2vw, 10px);
+        font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    }
+    
+    .second-subtitle {
+        font-size: clamp(0.8rem, 1.8vw, 1rem);
+    }
+
+}
+
+/* ==============================
+   Breakpoints menores (mobile first)
+============================== */
+
+/* ==============================
+   <= 992px (Tablets grandes / Desktop mediano)
+============================== */
+@media (max-width: 992px) {
+    
+    .second-subtitle {
+        font-size: 1rem;
+    }
+
+    .second-btn {
+        padding: 0.7rem 1.2rem;
+    }
+
+    .navbar-brand img {
+        height: 28px;
+        margin-bottom: 10px;
+    }
+
+    .navbar-custom .nav-link {
+        padding: 8px 0;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* ==============================
+   <= 576px (Móviles pequeños)
+============================== */
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 24px;
+    }
+
+    .navbar-custom .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 0;
+    }
+
+    .second-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .second-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==============================
+   <= 500px (Hero-title)
+============================== */
+@media (max-width: 500px) and (min-width: 441px) {
+
+    .second-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .second-btn {
+        padding: 0.55rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ==============================
+   440px - 400px
+============================== */
+@media (max-width: 440px) and (min-width: 401px) {
+
+    .second-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .second-btn {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==============================
+   400px - 361px
+============================== */
+@media (max-width: 400px) and (min-width: 361px) {
+
+    .second-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .second-btn {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* ==============================
+   <= 360px (Extremos como Samsung S9)
+============================== */
+@media (max-width: 360px) {
+
+    .second-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .second-btn {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* AJUSTE: Alta densidad de píxeles (Retina, etc.) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }   
+}

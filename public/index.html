@@ -13,13 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Dev. Natalia V. Herrera">
-    <link rel="canonical" href="https://laclavefitnessclub.com">
+    <link rel="canonical" href="https://laclave-fitnessclub.web.app/">
 
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:title" content="La Clave Fitness Club | Inicio">
     <meta property="og:description" content="Tu momento es Clave. Clases, cursos y eventos de fitness en Córdoba.">
     <meta property="og:image" content="https://i.postimg.cc/yNFrYw62/LOGO-MARISOL-20250804-231513-0000-1.png">
-    <meta property="og:url" content="https://laclavefitnessclub.com">
+    <meta property="og:url" content="https://laclave-fitnessclub.web.app/">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
@@ -35,7 +35,7 @@
         "@type": "HealthClub",
         "name": "La Clave Fitness Club (Online)",
         "image": "https://i.postimg.cc/7PFwYyYP/LOGO-AMARILLO-LETRAS-BLANCAS.png",
-        "url": "https://laclavefitnessclub.com",
+        "url": "https://laclave-fitnessclub.web.app/",
         "telephone": "+54 9 3518 67-6680",
         "address": {
         "@type": "PostalAddress",
@@ -57,7 +57,7 @@
         },
         "availableChannel": {
             "@type": "ServiceChannel",
-            "serviceUrl": "https://laclavefitnessclub.com/clases-online"
+            "serviceUrl": "https://laclave-fitnessclub.web.app/clases-online"
         }
         }
     }
@@ -76,10 +76,11 @@
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
     <!-- CSS personalizados -->
-    <link rel="stylesheet" href="/css/index.css?v=1.0">
-    <link rel="stylesheet" href="/css/footer.css?v=1.0" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="/css/footer.css" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="/css/footer.css?v=1.0">
+        <link rel="stylesheet" href="/css/footer.css">
     </noscript>
     <link rel="stylesheet" href="/css/cls-fix.css">
 </head>
@@ -92,7 +93,6 @@
             <button id="enterButton" class="btn-fitness">Ingresar</button>
         </div>
     </div>
-
     <div class="cookie-banner" id="cookieBanner">
         <p>Usamos cookies para mejorar tu experiencia. <a href="./pages/legales.html#cookies" id="openCookieInfo"
                 target="_blank">Más
@@ -111,10 +111,13 @@
                 <label><input type="checkbox" id="analyticsCookies"> Analíticas</label>
                 <label><input type="checkbox" id="adsCookies"> Publicidad</label>
             </div>
-            <button id="saveCookieSettings">Guardar preferencias</button>
-            <button id="closeCookieModal">Cerrar</button>
+            <div class="cookie-actions">
+                <button id="saveCookieSettings">Guardar preferencias</button>
+                <button id="closeCookieModal">Cerrar</button>
+            </div>
         </div>
     </div>
+
     <header id="top">
         <nav class="navbar navbar-expand-lg navbar-custom">
             <div class="container-fluid">
@@ -144,10 +147,13 @@
             </div>
         </nav>
     </header>
-    <main class="index">
+    <main class="main-content">
         <hero>
             <div class="feature-section">
-                <h1 class="hero-title">Tu momento es "La Clave"</h1>
+                <div class="hero-title-block">
+                    <h1 class="hero-title">Tu momento es "La Clave"</h1>
+                    <h2 class="hero-subtitle">Entrena, Disfruta y Evoluciona.</h2>
+                </div>
             </div>
         </hero>
         <section class="second">
@@ -168,7 +174,7 @@
                     <div class="second-overlay">
                         <div class="second-content">
                             <h2 class="second-title">FIT<span>FEST</span></h2>
-                            <p class="second-subtitle">Viví la experiencia del entrenamiento como una fiesta.</p>
+                            <p class="second-subtitle">Viví el entrenamiento a toda fiesta.</p>
                             <a href="./pages/fitfest.html" class="second-btn">Quiero info</a>
                         </div>
                     </div>
@@ -204,6 +210,7 @@
                 </p>
             </a>
         </section>
+
     </main>
     <footer class="footer">
         <div class="footer-inner">
