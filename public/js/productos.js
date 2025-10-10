@@ -27,7 +27,7 @@ export const productos = [
         price: "Consultar",
         imagen: "https://i.postimg.cc/h4QT3ZF4/tienda-localizada.webp"
     },
-    {
+    /*{
         id: 3,
         tittle: "Personal Trainer",
         category: "MOVE & TONE",
@@ -40,7 +40,7 @@ export const productos = [
         stock: "Consultar cupos en modalidad presencial",
         price: "Consultar",
         imagen: "https://i.postimg.cc/85PfHwRG/tienda-funcional.webp"
-    },
+    },*/
     {
         id: 5,
         tittle: "Stretching",
@@ -55,20 +55,20 @@ export const productos = [
         price: "Consultar",
         imagen: "https://i.postimg.cc/W1dLHg7h/tienda-stretching.avif",
     },
-    //{
-    //   id: 6,
-    //    tittle: "Pilates",
-    //    category: "VITAL STRETCH",
-    //    categoryIcon: "https://i.postimg.cc/Cx8XQtCy/icono-stretching.webp",
-    //    description: "Ejercicios de bajo impacto que fortalecen el core y mejoran la postura.",
-    //    presentation: {
-    //        presencial: true,
-    //        online: false
-    //    },
-    //    stock: "Consultar cupos",
-    //    price: "Consultar",
-     //   imagen: "https://i.postimg.cc/JhjFfqH4/tienda-pilates.avif"
-    //}
+    /*{
+        id: 6,
+        tittle: "Pilates",
+        category: "VITAL STRETCH",
+        categoryIcon: "https://i.postimg.cc/Cx8XQtCy/icono-stretching.webp",
+        description: "Ejercicios de bajo impacto que fortalecen el core y mejoran la postura.",
+        presentation: {
+            presencial: true,
+            online: false
+        },
+        stock: "Consultar cupos",
+        price: "Consultar",
+        imagen: "https://i.postimg.cc/JhjFfqH4/tienda-pilates.avif"
+    },*/
     {
         id: 7,
         tittle: "Botas de Rebote",
@@ -109,6 +109,6 @@ export const productos = [
         },
         stock: "Consultar cupos",
         price: "Consultar",
-        imagen: "https://i.postimg.cc/Sx2rLQyd/tienda-workshop.webp"
+        imagen: "https://i.postimg.cc/T38pNH9W/tienda-workshop.jpg"
     },
 ];

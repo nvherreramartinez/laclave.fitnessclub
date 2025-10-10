@@ -44,3 +44,13 @@ document.querySelectorAll('.card').forEach(card => {
         card.style.transform = 'scale(1)'; // Revierte la escala al dejar de tocar
     });
 });
+
+const container = document.querySelector('.fitness-fest-container');
+const dots = document.querySelectorAll('.dot');
+
+container.addEventListener('scroll', () => {
+    const scrollLeft = container.scrollLeft;
+    const width = container.clientWidth;
+    const index = Math.round(scrollLeft / width);
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+});
