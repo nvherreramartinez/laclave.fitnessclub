@@ -14,7 +14,7 @@ Thumbs.db
 .vscode/
 
 # Carpetas varias
-admin-panel
+admin
 
 # Entornos (si existieran en el futuro)
 .env
@@ -27,6 +27,7 @@ admin-panel
 firebase.js 
 firebase-panel.js
 firebase.json
+firebaseInit.js
 
 # Windows
 desktop.ini

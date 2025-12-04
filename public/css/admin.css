@@ -1,0 +1,102 @@
+.admin-wrap {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 16px;
+    font-family: 'Montserrat', system-ui, Arial;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+}
+
+.auth-card {
+    max-width: 420px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.auth-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #0077b6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn.secondary {
+    background: #666;
+}
+
+.panel-card .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.events-list .event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.events-list .event-row .info small {
+    color: #666;
+}
+
+.form-container {
+    margin: 12px 0 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.form-grid input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.auth-msg {
+    color: #b00020;
+    margin-top: 8px;
+}
+
+@media (max-width:700px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
