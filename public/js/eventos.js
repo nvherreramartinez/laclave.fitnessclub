@@ -20,8 +20,8 @@ export const events = [
         fecha: "SAB",
         categoriaIcon: "https://i.postimg.cc/Y0yZNJkS/icono-kangoo.png",
         hora: "10:00",
-        titulo: "Domadoras",
-        gimnasio: "Energym",
+        titulo: "Jumping",
+        gimnasio: "Domadoras",
         barrio: "Villa Allende",
         provincia: "Córdoba"
     },
