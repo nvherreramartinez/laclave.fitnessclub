@@ -19,6 +19,10 @@ video {
     height: auto;
     display: block;
 }
+:root {
+    --marron: #5a3030;
+    --crema: #f5efe6;
+}
 
 /* ===============================
    NAVBAR
