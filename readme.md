@@ -81,10 +81,11 @@ Una vez configurado, despliega el sitio a Firebase:
 ![FitZone](public/img/fitzone.png)
 ![Contact](public/img/contact.png)
 
-🎥 Demo<br>
-El sitio aún no está desplegado. Una vez desplegado, se añadirá un enlace a la demo:
-Visita La Clave Fitness Club (pendiente).
-Si tienes un video del ingreso al sitio, súbelo a una plataforma como YouTube o Vimeo y agrega el enlace aquí.
+💻 Version HOST
+
+Puedes explorar la versión funcional del proyecto aquí:
+
+👉 [La Clave Fitness Club](https://laclavefitnessclub.com/)
 
 🤝 Contribución<br>
 Este es un proyecto privado de La Clave Fitness Club, administrado por un cliente. No se aceptan contribuciones externas. Para sugerencias o colaboraciones, contacta al equipo del club.
