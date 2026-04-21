@@ -75,11 +75,11 @@ Una vez configurado, despliega el sitio a Firebase:
 * Notificaciones: SweetAlert se usa para mostrar alertas personalizadas (por ejemplo, confirmaciones o errores).
 
 📸 Capturas de Pantalla
-![Index](img/index.png)
-![Shop](img/shop.png)
-![FitFest](img/fitfest.png)
-![FitZone](img/fitzone.png)
-![Contact](img/contact.png)
+![Index](public/img/index.png)
+![Shop](public/img/shop.png)
+![FitFest](public/img/fitfest.png)
+![FitZone](public/img/fitzone.png)
+![Contact](public/img/contact.png)
 
 🎥 Demo<br>
 El sitio aún no está desplegado. Una vez desplegado, se añadirá un enlace a la demo:
