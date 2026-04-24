@@ -12,19 +12,7 @@ export const events = [
         barrio: "Vía Web",
         provincia: "Todo el país"
     },
-    {
-        clase: "jumping",
-        link: "https://wa.me/5491112345678?text=Hola,%20quiero%20más%20info%20del%20evento",
-        mes: "ABR",
-        dia: "14",
-        fecha: "MAR",
-        categoriaIcon: "https://i.postimg.cc/Y0yZNJkS/icono-kangoo.png",
-        hora: "21:00",
-        titulo: "Jumping",
-        gimnasio: "VIDA ACTIVA",
-        barrio: "Montecristo",
-        provincia: "Córdoba"
-    },
+    
     {
         clase: "jumping",
         link: "https://wa.me/5491112345678?text=Hola,%20quiero%20más%20info%20del%20evento",
@@ -127,6 +115,19 @@ export const events = [
         titulo: "Jumping",
         gimnasio: "NORISGYM",
         barrio: "Malvinas Argentinas",
+        provincia: "Córdoba"
+    },
+    {
+        clase: "jumping",
+        link: "https://wa.me/5491112345678?text=Hola,%20quiero%20más%20info%20del%20evento",
+        mes: "MAY",
+        dia: "19",
+        fecha: "MAR",
+        categoriaIcon: "https://i.postimg.cc/Y0yZNJkS/icono-kangoo.png",
+        hora: "20:00",
+        titulo: "Jumping",
+        gimnasio: "VIDA ACTIVA",
+        barrio: "Montecristo",
         provincia: "Córdoba"
     },
 ];
